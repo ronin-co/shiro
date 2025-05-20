@@ -22,8 +22,7 @@
     "format": "biome check --write && biome format --write",
     "test": "bun test",
     "build": "tsup ./src/index.ts --dts --format esm",
-    "dev": "bun run build -- --watch",
-    "prepare": "bun run build"
+    "dev": "bun run build -- --watch"
   },
   "keywords": [
     "auth",
