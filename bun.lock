@@ -17,6 +17,7 @@
       "devDependencies": {
         "@ronin/compiler": "workspace:*",
         "@ronin/engine": "0.1.16",
+        "ronin": "workspace:*",
       },
       "peerDependencies": {
         "better-auth": ">=1.2.5",
@@ -44,6 +45,7 @@
         "@ronin/compiler": "workspace:*",
         "@types/ini": "4.1.1",
         "bun-bagel": "1.1.0",
+        "ronin": "workspace:*",
       },
     },
     "packages/client": {
