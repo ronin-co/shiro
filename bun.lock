@@ -11,7 +11,15 @@
         "typescript": "5.8.3",
       },
     },
-    "packages/better-auth": {
+    "packages/ronin": {
+      "name": "ronin",
+      "version": "6.6.11",
+      "dependencies": {
+        "@ronin/compiler": "workspace:*",
+        "@ronin/syntax": "workspace:*",
+      },
+    },
+    "packages/ronin-better-auth": {
       "name": "@ronin/better-auth",
       "version": "1.0.0",
       "devDependencies": {
@@ -24,7 +32,7 @@
         "ronin": ">=6.6.11",
       },
     },
-    "packages/cli": {
+    "packages/ronin-cli": {
       "name": "@ronin/cli",
       "version": "0.3.13",
       "bin": {
@@ -51,15 +59,7 @@
         "ronin": "workspace:*",
       },
     },
-    "packages/client": {
-      "name": "ronin",
-      "version": "6.6.11",
-      "dependencies": {
-        "@ronin/compiler": "workspace:*",
-        "@ronin/syntax": "workspace:*",
-      },
-    },
-    "packages/codegen": {
+    "packages/ronin-codegen": {
       "name": "@ronin/codegen",
       "version": "1.7.4",
       "dependencies": {
@@ -70,7 +70,7 @@
         "@ronin/syntax": "workspace:*",
       },
     },
-    "packages/compiler": {
+    "packages/ronin-compiler": {
       "name": "@ronin/compiler",
       "version": "0.18.5",
       "devDependencies": {
@@ -78,7 +78,7 @@
         "title": "4.0.1",
       },
     },
-    "packages/hono": {
+    "packages/ronin-hono": {
       "name": "@ronin/hono",
       "version": "0.1.2",
       "devDependencies": {
@@ -91,7 +91,7 @@
         "ronin": ">=6.6.11",
       },
     },
-    "packages/syntax": {
+    "packages/ronin-syntax": {
       "name": "@ronin/syntax",
       "version": "0.2.39",
       "devDependencies": {
@@ -293,19 +293,19 @@
 
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.41.0", "", { "os": "win32", "cpu": "x64" }, "sha512-h1J+Yzjo/X+0EAvR2kIXJDuTuyT7drc+t2ALY0nIcGPbTatNOf0VWdhEA2Z4AAjv6X1NJV7SYo5oCTYRJhSlVA=="],
 
-    "@ronin/better-auth": ["@ronin/better-auth@workspace:packages/better-auth"],
+    "@ronin/better-auth": ["@ronin/better-auth@workspace:packages/ronin-better-auth"],
 
-    "@ronin/cli": ["@ronin/cli@workspace:packages/cli"],
+    "@ronin/cli": ["@ronin/cli@workspace:packages/ronin-cli"],
 
-    "@ronin/codegen": ["@ronin/codegen@workspace:packages/codegen"],
+    "@ronin/codegen": ["@ronin/codegen@workspace:packages/ronin-codegen"],
 
-    "@ronin/compiler": ["@ronin/compiler@workspace:packages/compiler"],
+    "@ronin/compiler": ["@ronin/compiler@workspace:packages/ronin-compiler"],
 
     "@ronin/engine": ["@ronin/engine@0.1.16", "", { "dependencies": { "zod": "3.24.1" } }, "sha512-u1+MNPhj5XtLLCXcDNq6dlcYyb0B/VHndyZOJzFWPEXIIWj5ULdAHJ04VT/Gvmjxb3UlBN0EZIgA1ycNL8H5+w=="],
 
-    "@ronin/hono": ["@ronin/hono@workspace:packages/hono"],
+    "@ronin/hono": ["@ronin/hono@workspace:packages/ronin-hono"],
 
-    "@ronin/syntax": ["@ronin/syntax@workspace:packages/syntax"],
+    "@ronin/syntax": ["@ronin/syntax@workspace:packages/ronin-syntax"],
 
     "@simplewebauthn/browser": ["@simplewebauthn/browser@13.1.0", "", {}, "sha512-WuHZ/PYvyPJ9nxSzgHtOEjogBhwJfC8xzYkPC+rR/+8chl/ft4ngjiK8kSU5HtRJfczupyOh33b25TjYbvwAcg=="],
 
@@ -567,7 +567,7 @@
 
     "rollup": ["rollup@4.41.0", "", { "dependencies": { "@types/estree": "1.0.7" }, "optionalDependencies": { "@rollup/rollup-android-arm-eabi": "4.41.0", "@rollup/rollup-android-arm64": "4.41.0", "@rollup/rollup-darwin-arm64": "4.41.0", "@rollup/rollup-darwin-x64": "4.41.0", "@rollup/rollup-freebsd-arm64": "4.41.0", "@rollup/rollup-freebsd-x64": "4.41.0", "@rollup/rollup-linux-arm-gnueabihf": "4.41.0", "@rollup/rollup-linux-arm-musleabihf": "4.41.0", "@rollup/rollup-linux-arm64-gnu": "4.41.0", "@rollup/rollup-linux-arm64-musl": "4.41.0", "@rollup/rollup-linux-loongarch64-gnu": "4.41.0", "@rollup/rollup-linux-powerpc64le-gnu": "4.41.0", "@rollup/rollup-linux-riscv64-gnu": "4.41.0", "@rollup/rollup-linux-riscv64-musl": "4.41.0", "@rollup/rollup-linux-s390x-gnu": "4.41.0", "@rollup/rollup-linux-x64-gnu": "4.41.0", "@rollup/rollup-linux-x64-musl": "4.41.0", "@rollup/rollup-win32-arm64-msvc": "4.41.0", "@rollup/rollup-win32-ia32-msvc": "4.41.0", "@rollup/rollup-win32-x64-msvc": "4.41.0", "fsevents": "~2.3.2" }, "bin": { "rollup": "dist/bin/rollup" } }, "sha512-HqMFpUbWlf/tvcxBFNKnJyzc7Lk+XO3FGc3pbNBLqEbOz0gPLRgcrlS3UF4MfUrVlstOaP/q0kM6GVvi+LrLRg=="],
 
-    "ronin": ["ronin@workspace:packages/client"],
+    "ronin": ["ronin@workspace:packages/ronin"],
 
     "rou3": ["rou3@0.5.1", "", {}, "sha512-OXMmJ3zRk2xeXFGfA3K+EOPHC5u7RDFG7lIOx0X1pdnhUkI8MdVrbV+sNsD80ElpUZ+MRHdyxPnFthq9VHs8uQ=="],
 
