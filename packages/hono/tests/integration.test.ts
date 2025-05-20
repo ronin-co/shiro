@@ -49,9 +49,9 @@ describe('Use `ronin` middleware', () => {
         '*',
         ronin({
           fetch: fetcher,
-          hooks: {
+          triggers: {
             user: {
-              beforeGet: (query) => {
+              get: (query) => {
                 query.limitedTo = 1;
                 return query;
               },
@@ -92,9 +92,9 @@ describe('Use `ronin` middleware', () => {
         '*',
         ronin(() => ({
           fetch: fetcher,
-          hooks: {
+          triggers: {
             user: {
-              beforeGet: (query) => {
+              get: (query) => {
                 query.limitedTo = 1;
                 return query;
               },
@@ -140,9 +140,9 @@ describe('Use `ronin` middleware', () => {
           return {
             asyncContext: new AsyncLocalStorage(),
             fetch: fetcher,
-            hooks: {
+            triggers: {
               user: {
-                beforeGet: (query) => {
+                get: (query) => {
                   query.limitedTo = 1;
                   return query;
                 },
