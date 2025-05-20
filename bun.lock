@@ -41,6 +41,7 @@
         "resolve-from": "5.0.0",
       },
       "devDependencies": {
+        "@ronin/compiler": "workspace:*",
         "@types/ini": "4.1.1",
         "bun-bagel": "1.1.0",
       },
