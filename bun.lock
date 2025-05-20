@@ -27,6 +27,9 @@
     "packages/cli": {
       "name": "@ronin/cli",
       "version": "0.3.13",
+      "bin": {
+        "ronin": "./dist/bin/index.js",
+      },
       "dependencies": {
         "@dprint/formatter": "0.4.1",
         "@dprint/typescript": "0.93.3",
@@ -51,11 +54,7 @@
     "packages/client": {
       "name": "ronin",
       "version": "6.6.11",
-      "bin": {
-        "ronin": "./dist/bin/index.js",
-      },
       "dependencies": {
-        "@ronin/cli": "workspace:*",
         "@ronin/compiler": "workspace:*",
         "@ronin/syntax": "workspace:*",
       },

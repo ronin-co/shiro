@@ -6,15 +6,16 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "bin": {
+    "ronin": "./dist/bin/index.js"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
     "type-check": "tsc --pretty",
     "test": "bun test",
-    "build": "tsup ./src/index.ts --dts --format esm"
+    "build": "tsup ./bin/index.ts --dts --format esm"
   },
   "keywords": [
     "database",
