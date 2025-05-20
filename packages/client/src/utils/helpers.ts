@@ -2,6 +2,8 @@ import type { QueryHandlerOptions } from '@/src/types/utils';
 import type { ResultRecord } from '@ronin/compiler';
 import { getProperty, setProperty } from '@ronin/syntax/queries';
 
+const SPLIT_REGEX = /(?=[A-Z])|[.\-\s_]/;
+
 /**
  * Turn the given string into "dash-case", which we use for slugs.
  *
@@ -20,7 +22,7 @@ export const toDashCase = (string?: string | null): string => {
   const parts =
     string
       ?.replace(/([A-Z])+/g, capitalize)
-      ?.split(/(?=[A-Z])|[.\-\s_]/)
+      ?.split(SPLIT_REGEX)
       .map((x) => x.toLowerCase()) ?? [];
 
   if (parts.length === 0) return '';

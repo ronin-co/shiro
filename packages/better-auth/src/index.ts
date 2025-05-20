@@ -104,14 +104,14 @@ export const ronin = (client?: SyntaxFactory): AdapterInstance => {
         const model = await getModel(factory, slug);
         const instructions = convertWhereClause(where);
         const transformed = await transformInput(instructions, slug);
-        const results = await factory.get[model.pluralSlug]<
+        const results = (await factory.get[model.pluralSlug]<
           Array<ResultRecordBase<Date>>
         >({
           after: offset?.toString(),
           limitedTo: limit,
           orderedBy: transformOrderedBy(sortBy),
           with: transformed,
-        }) as Array<ResultRecordBase<Date>>;
+        })) as Array<ResultRecordBase<Date>>;
 
         return results.map((result) => transformOutput(result));
       },

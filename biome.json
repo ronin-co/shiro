@@ -42,7 +42,8 @@
         "useSortedClasses": "warn",
         "noSecrets": "off",
         "noNestedTernary": "off",
-        "useExplicitType": "off"
+        "useExplicitType": "off",
+        "noProcessEnv": "off"
       },
       "performance": {
         "all": true,
@@ -66,12 +67,16 @@
         "useFilenamingConvention": "off",
         "useNamingConvention": "off",
         "useShorthandArrayType": "off",
-        "useDefaultSwitchClause": "off"
+        "useDefaultSwitchClause": "off",
+        "noNamespaceImport": "off"
       },
       "suspicious": {
         "all": true,
         "noConsole": "off",
-        "noExplicitAny": "off"
+        "noExplicitAny": "off",
+        "noEmptyBlockStatements": "off",
+        "noConsoleLog": "off",
+        "useAwait": "off"
       }
     }
   },
