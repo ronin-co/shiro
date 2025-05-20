@@ -9,10 +9,10 @@
       "cache": false
     },
     "type-check": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["build"]
     },
     "test": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["build"]
     }
   }
 }
