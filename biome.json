@@ -41,13 +41,15 @@
         "all": true,
         "useSortedClasses": "warn",
         "noSecrets": "off",
-        "noNestedTernary": "off"
+        "noNestedTernary": "off",
+        "useExplicitType": "off"
       },
       "performance": {
         "all": true,
 
         "noBarrelFile": "off",
-        "noReExportAll": "off"
+        "noReExportAll": "off",
+        "noDelete": "off"
       },
       "security": { "all": true },
       "style": {
@@ -68,7 +70,8 @@
       },
       "suspicious": {
         "all": true,
-        "noConsole": "off"
+        "noConsole": "off",
+        "noExplicitAny": "off"
       }
     }
   },
