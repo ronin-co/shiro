@@ -2,18 +2,18 @@
   "name": "orm",
   "private": true,
   "workspaces": ["packages/*"],
-  "packageManager": "bun@1.2.8",
+  "packageManager": "bun@1.2.13",
   "scripts": {
     "build": "turbo build",
     "test": "turbo test",
     "type-check": "turbo type-check",
-    "format": "biome check --write && biome format --write",
-    "lint": "echo 'Green'"
+    "lint": "bun run type-check && biome check --error-on-warnings",
+    "format": "biome check --write && biome format --write"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/bun": "latest",
-    "tsup": "8.4.0",
+    "tsup": "8.5.0",
     "turbo": "2.5.3",
     "typescript": "5.8.3"
   }
