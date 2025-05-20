@@ -2,10 +2,10 @@
   "name": "orm",
   "private": true,
   "workspaces": ["packages/*"],
+  "packageManager": "bun@1.2.8",
   "scripts": {
-    "dev": "bun run --filter '*' dev",
-    "build": "bun run --filter '*' build",
-    "test": "bun run --filter '*' test",
+    "build": "turbo build",
+    "test": "turbo test",
     "lint": "echo 'Green'",
     "lint:biome": "biome check --error-on-warnings",
     "lint:tsc": "tsc --pretty",
@@ -15,6 +15,7 @@
     "@biomejs/biome": "1.9.4",
     "@types/bun": "latest",
     "tsup": "8.4.0",
+    "turbo": "2.5.3",
     "typescript": "5.8.3"
   }
 }
