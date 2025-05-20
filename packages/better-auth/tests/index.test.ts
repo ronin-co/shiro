@@ -123,7 +123,7 @@ describe('adapter', () => {
       const session = await auth.api.getSession({
         headers: new Headers({
           Authorization: `Bearer ${token}`,
-        }),
+        }) as any,
       });
 
       expect(session).toBeDefined();

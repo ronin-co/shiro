@@ -495,7 +495,7 @@ describe('transform', () => {
 
       test('`user` query with a `File` image', async () => {
         const image = await Bun.file(EXAMPLE_IMAGE_PATH.pathname).arrayBuffer();
-        const file = new File([image], 'example.jpeg');
+        const file = new File([image as unknown as Blob], 'example.jpeg');
 
         const instructions = {
           createdAt: new Date(),

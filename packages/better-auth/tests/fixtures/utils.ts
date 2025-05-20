@@ -63,7 +63,6 @@ export const init = async (options?: {
   const { betterAuth: betterAuthOptions, models = DEFAULT_MODELS } = options ?? {};
 
   // Create an ephemeral database instance.
-  // @ts-expect-error For some reason `crypto.randomUUID` is not getting picked up
   const databaseId = crypto.randomUUID();
   const database = await engine.createDatabase({ id: databaseId });
 
