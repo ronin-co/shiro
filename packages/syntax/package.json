@@ -10,8 +10,8 @@
     "dist"
   ],
   "exports": {
-    "./schema": "./dist/schema.js",
-    "./queries": "./dist/queries.js"
+    "./schema": "./dist/schema/index.js",
+    "./queries": "./dist/queries/index.js"
   },
   "typesVersions": {
     "*": {
