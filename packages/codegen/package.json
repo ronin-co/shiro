@@ -41,8 +41,8 @@
     "lint:tsc": "tsc --pretty",
     "format": "biome check --write && biome format --write",
     "test": "bun test",
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "tsup ./src/index.ts ./src/zod.ts --dts --format esm",
+    "dev": "bun run build -- --watch",
     "prepare": "bun run build"
   },
   "keywords": [
