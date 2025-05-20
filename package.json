@@ -9,8 +9,7 @@
     "lint": "echo 'Green'",
     "lint:biome": "biome check --error-on-warnings",
     "lint:tsc": "tsc --pretty",
-    "format": "biome check --write && biome format --write",
-    "prepare": "bun run build"
+    "format": "biome check --write && biome format --write"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",

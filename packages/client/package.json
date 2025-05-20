@@ -53,8 +53,7 @@
     "format": "biome format --write",
     "test": "bun test",
     "build": "tsup",
-    "dev": "tsup --watch",
-    "prepare": "bun run build"
+    "dev": "tsup --watch"
   },
   "keywords": [
     "ronin",
@@ -70,16 +69,5 @@
   "homepage": "https://ronin.co/docs/typescript-client",
   "engines": {
     "node": ">=18.17.0"
-  },
-  "dependencies": {
-    "@ronin/cli": "0.3.13",
-    "@ronin/compiler": "0.18.5",
-    "@ronin/syntax": "0.2.39"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/bun": "1.2.4",
-    "tsup": "8.4.0",
-    "typescript": "5.8.2"
   }
 }

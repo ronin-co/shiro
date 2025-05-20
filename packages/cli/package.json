@@ -42,7 +42,6 @@
   },
   "devDependencies": {
     "@types/ini": "4.1.1",
-    "bun-bagel": "1.1.0",
-    "ronin": "6.6.9"
+    "bun-bagel": "1.1.0"
   }
 }
