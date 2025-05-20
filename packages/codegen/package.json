@@ -36,9 +36,7 @@
     }
   },
   "scripts": {
-    "lint": "bun run --bun lint:tsc && bun run --bun lint:biome",
-    "lint:biome": "biome check --error-on-warnings",
-    "lint:tsc": "tsc --pretty",
+    "type-check": "tsc --pretty",
     "test": "bun test",
     "build": "tsup ./src/index.ts ./src/zod.ts --dts --format esm",
     "dev": "bun run build -- --watch"

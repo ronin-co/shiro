@@ -8,6 +8,9 @@
       "persistent": true,
       "cache": false
     },
+    "type-check": {
+      "dependsOn": ["^build"]
+    },
     "test": {
       "dependsOn": ["^build"]
     }

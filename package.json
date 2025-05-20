@@ -6,9 +6,7 @@
   "scripts": {
     "build": "turbo build",
     "test": "turbo test",
-    "lint": "echo 'Green'",
-    "lint:biome": "biome check --error-on-warnings",
-    "lint:tsc": "tsc --pretty",
+    "type-check": "turbo type-check",
     "format": "biome check --write && biome format --write"
   },
   "devDependencies": {
