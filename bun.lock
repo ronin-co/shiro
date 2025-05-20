@@ -36,7 +36,7 @@
         "typescript": "5.7.2",
       },
     },
-    "packages/hono-client": {
+    "packages/hono": {
       "name": "@ronin/hono",
       "version": "0.1.2",
       "devDependencies": {
@@ -244,7 +244,7 @@
 
     "@ronin/engine": ["@ronin/engine@0.0.27", "", { "dependencies": { "zod": "3.23.8" } }, "sha512-ArUFnfNH6pVZb3nQStDNZ2p2m4j9QXQTxPM+BrCB6mMYShXrEv9Ke4DiJb+js0IuVhydWWYyA1sql4Nf0IWY5Q=="],
 
-    "@ronin/hono": ["@ronin/hono@workspace:packages/hono-client"],
+    "@ronin/hono": ["@ronin/hono@workspace:packages/hono"],
 
     "@ronin/syntax": ["@ronin/syntax@workspace:packages/syntax"],
 
