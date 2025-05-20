@@ -34,7 +34,7 @@
   },
   "peerDependencies": {
     "hono": ">=3.9.0",
-    "ronin": ">=6.0.18"
+    "ronin": ">=6.6.11"
   },
   "peerDependenciesMeta": {
     "hono": {

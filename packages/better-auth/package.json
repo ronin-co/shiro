@@ -45,7 +45,7 @@
   },
   "peerDependencies": {
     "better-auth": ">=1.2.5",
-    "ronin": ">=6.4.16"
+    "ronin": ">=6.6.11"
   },
   "peerDependenciesMeta": {
     "better-auth": {
