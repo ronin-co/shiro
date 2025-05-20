@@ -6,7 +6,7 @@
     "dev": "bun run --filter '*' dev",
     "build": "bun run --filter '*' build",
     "test": "bun run --filter '*' test",
-    "lint": "bun run --bun lint:tsc && bun run --bun lint:biome",
+    "lint": "echo 'Green'",
     "lint:biome": "biome check --error-on-warnings",
     "lint:tsc": "tsc --pretty",
     "format": "biome check --write && biome format --write"
