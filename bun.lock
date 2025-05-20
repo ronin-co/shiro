@@ -82,6 +82,7 @@
       "devDependencies": {
         "hono": "4.6.17",
         "msw": "2.7.0",
+        "ronin": "workspace:*",
       },
       "peerDependencies": {
         "hono": ">=3.9.0",
