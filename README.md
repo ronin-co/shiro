@@ -1,4 +1,4 @@
-# RONIN ORM
+# RONIN
 
 [![tests](https://img.shields.io/github/actions/workflow/status/ronin-co/testing/validate.yml?label=tests)](https://github.com/ronin-co/testing/actions/workflows/validate.yml)
 
