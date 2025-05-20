@@ -155,7 +155,6 @@ describe('command', () => {
   });
 
   beforeAll(async () => {
-    const packageJson = JSON.parse(await fs.readFile('package.json', 'utf-8'));
     // Create temp directory.
     await fs.mkdir(tempDir, { recursive: true });
     // Change to temp directory.
@@ -163,7 +162,7 @@ describe('command', () => {
     // Initialize project.
     await $`bun init -y`;
     // Install RONIN packages.
-    await $`bun add ronin@${packageJson.devDependencies.ronin || 'latest'}`;
+    await $`bun add ronin@latest`;
     // Create schema directory.
     await fs.mkdir(path.join(tempDir, 'schema'));
   });
