@@ -50,5 +50,9 @@
   "license": "Apache-2.0",
   "dependencies": {
     "typescript": "5.7.3"
+  },
+  "devDependencies": {
+    "@ronin/compiler": "workspace:*",
+    "@ronin/syntax": "workspace:*"
   }
 }

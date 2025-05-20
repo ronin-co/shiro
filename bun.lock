@@ -15,6 +15,7 @@
       "name": "@ronin/better-auth",
       "version": "1.0.0",
       "devDependencies": {
+        "@ronin/compiler": "workspace:*",
         "@ronin/engine": "0.1.16",
       },
       "peerDependencies": {
@@ -38,6 +39,7 @@
         "open": "10.1.0",
         "ora": "8.1.1",
         "resolve-from": "5.0.0",
+        "ronin": "workspace:*",
       },
       "devDependencies": {
         "@types/ini": "4.1.1",
@@ -50,12 +52,21 @@
       "bin": {
         "ronin": "./dist/bin/index.js",
       },
+      "dependencies": {
+        "@ronin/cli": "workspace:*",
+        "@ronin/compiler": "workspace:*",
+        "@ronin/syntax": "workspace:*",
+      },
     },
     "packages/codegen": {
       "name": "@ronin/codegen",
       "version": "1.7.4",
       "dependencies": {
         "typescript": "5.7.3",
+      },
+      "devDependencies": {
+        "@ronin/compiler": "workspace:*",
+        "@ronin/syntax": "workspace:*",
       },
     },
     "packages/compiler": {
@@ -82,6 +93,7 @@
       "name": "@ronin/syntax",
       "version": "0.2.39",
       "devDependencies": {
+        "@ronin/compiler": "workspace:*",
         "expect-type": "1.2.0",
       },
     },

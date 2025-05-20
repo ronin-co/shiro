@@ -31,9 +31,9 @@
   ],
   "author": "ronin",
   "license": "Apache-2.0",
-  "dependencies": {},
   "devDependencies": {
-    "@ronin/engine": "0.1.16"
+    "@ronin/engine": "0.1.16",
+    "@ronin/compiler": "workspace:*"
   },
   "peerDependencies": {
     "better-auth": ">=1.2.5",

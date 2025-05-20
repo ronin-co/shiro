@@ -66,5 +66,10 @@
   "homepage": "https://ronin.co/docs/typescript-client",
   "engines": {
     "node": ">=18.17.0"
+  },
+  "dependencies": {
+    "@ronin/cli": "workspace:*",
+    "@ronin/compiler": "workspace:*",
+    "@ronin/syntax": "workspace:*"
   }
 }

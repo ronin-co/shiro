@@ -37,6 +37,7 @@
   "author": "ronin",
   "license": "Apache-2.0",
   "devDependencies": {
-    "expect-type": "1.2.0"
+    "expect-type": "1.2.0",
+    "@ronin/compiler": "workspace:*"
   }
 }
