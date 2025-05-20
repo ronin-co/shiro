@@ -111,7 +111,7 @@ export const ronin = (client?: SyntaxFactory): AdapterInstance => {
           limitedTo: limit,
           orderedBy: transformOrderedBy(sortBy),
           with: transformed,
-        });
+        }) as Array<ResultRecordBase<Date>>;
 
         return results.map((result) => transformOutput(result));
       },
