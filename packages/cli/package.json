@@ -15,7 +15,7 @@
   "scripts": {
     "type-check": "tsc --pretty",
     "test": "bun test",
-    "build": "tsup ./bin/index.ts --dts --format esm"
+    "build": "tsup ./src/bin/index.ts --dts --format esm"
   },
   "keywords": [
     "database",

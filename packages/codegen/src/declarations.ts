@@ -49,7 +49,7 @@ export const importSyntaxUtiltypesType = createImportDeclaration({
 
 /**
  * ```ts
- * import type { PromiseTuple, QueryHandlerOptions } from "ronin/types";
+ * import type { PromiseTuple, QueryHandlerOptions } from "shiro-orm/types";
  * ```
  */
 export const importQueryHandlerOptionsType = createImportDeclaration({

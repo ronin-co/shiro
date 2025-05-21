@@ -38,8 +38,8 @@ export const identifiers = {
     promiseTuple: factory.createIdentifier('PromiseTuple'),
     queryHandlerOptions: factory.createIdentifier('QueryHandlerOptions'),
     module: {
-      root: factory.createIdentifier(JSON.stringify('ronin')),
-      types: factory.createIdentifier(JSON.stringify('ronin/types')),
+      root: factory.createIdentifier(JSON.stringify('shiro-orm')),
+      types: factory.createIdentifier(JSON.stringify('shiro-orm/types')),
     },
   },
   syntax: {

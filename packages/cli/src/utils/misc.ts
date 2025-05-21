@@ -411,12 +411,12 @@ export interface LocalPackages {
  *
  * @returns An instance of the package.
  */
-const getPackage = <Name extends 'syntax/queries' | 'compiler'>(
+const getPackage = <Name extends 'syntax' | 'compiler'>(
   name: Name,
 ): Promise<
-  Name extends 'syntax/queries' ? LocalPackages['syntax'] : LocalPackages['compiler']
+  Name extends 'syntax' ? LocalPackages['syntax'] : LocalPackages['compiler']
 > => {
-  const roninSyntaxPath = resolveFrom.silent(process.cwd(), `@ronin/${name}`);
+  const roninSyntaxPath = resolveFrom.silent(process.cwd(), `shiro-${name}`);
 
   if (!roninSyntaxPath) {
     throw new Error(
@@ -434,7 +434,7 @@ const getPackage = <Name extends 'syntax/queries' | 'compiler'>(
  */
 export const getLocalPackages = async (): Promise<LocalPackages> => {
   const [syntax, compiler] = await Promise.all([
-    getPackage('syntax/queries'),
+    getPackage('syntax'),
     getPackage('compiler'),
   ]);
 

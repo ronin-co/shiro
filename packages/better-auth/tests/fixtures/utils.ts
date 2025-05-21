@@ -3,8 +3,8 @@ import { BunDriver } from '@ronin/engine/drivers/bun';
 import { MemoryResolver } from '@ronin/engine/resolvers/memory';
 import { betterAuth } from 'better-auth';
 import { bearer } from 'better-auth/plugins';
-import { createSyntaxFactory } from 'ronin';
 import { ROOT_MODEL, Transaction } from 'shiro-compiler';
+import { createSyntaxFactory } from 'shiro-orm';
 
 import { Account, Session, User, Verification } from '@/fixtures/schema';
 import { ronin } from '@/index';

@@ -23,7 +23,7 @@ Or if you want to use a custom client instance:
 ```typescript
 import { betterAuth } from 'better-auth';
 import { ronin } from "shiro-better-auth";
-import { createSyntaxFactory } from 'ronin';
+import { createSyntaxFactory } from 'shiro-orm';
 
 const client = createSyntaxFactory({
   token: process.env.RONIN_TOKEN,
@@ -44,7 +44,7 @@ To help get started, here is that "core schema" translated to a RONIN database s
 ```ts
 // schema/index.ts
 
-import { blob, boolean, date, link, model, string } from 'ronin/schema';
+import { blob, boolean, date, link, model, string } from 'shiro-orm/schema';
 
 export const User = model({
   slug: 'user',

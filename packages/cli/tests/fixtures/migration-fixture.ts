@@ -1,4 +1,4 @@
-import { create } from 'ronin';
+import { create } from 'shiro-orm';
 
 export default () => [
   create.model({

@@ -11,7 +11,7 @@ import {
   set,
   sql,
   sqlBatch,
-} from 'ronin';
+} from 'shiro-orm';
 
 import {
   convertWhereClause,
@@ -22,8 +22,8 @@ import {
 } from '@/transform';
 
 import type { Adapter, AdapterInstance } from 'better-auth/types';
-import type { createSyntaxFactory } from 'ronin';
 import type { ResultRecordBase } from 'shiro-compiler';
+import type { createSyntaxFactory } from 'shiro-orm';
 
 type SyntaxFactory = ReturnType<typeof createSyntaxFactory>;
 
@@ -47,7 +47,7 @@ type SyntaxFactory = ReturnType<typeof createSyntaxFactory>;
  * @example
  * ```ts
  * import { ronin } from 'shiro-better-auth';
- * import { createSyntaxFactory } from 'ronin';
+ * import { createSyntaxFactory } from 'shiro-orm';
  * import { betterAuth } from 'better-auth';
  *
  * const client = createSyntaxFactory({

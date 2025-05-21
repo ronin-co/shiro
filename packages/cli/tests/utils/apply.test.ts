@@ -35,8 +35,8 @@ import { applyMigrationStatements } from '@/src/commands/apply';
 import type { MigrationFlags } from '@/src/utils/migration';
 import { getLocalPackages } from '@/src/utils/misc';
 import type { Database } from '@ronin/engine/resources';
-import { model, number, random, string } from 'ronin/schema';
 import type { Model } from 'shiro-compiler';
+import { model, number, random, string } from 'shiro-orm/schema';
 const packages = await getLocalPackages();
 const { Transaction } = packages.compiler;
 

@@ -109,7 +109,7 @@ export class Protocol {
     // Only import the query types that are actually used
     const imports =
       usedQueryTypesArray.length > 0
-        ? `import { ${usedQueryTypesArray.join(', ')} } from 'ronin';`
+        ? `import { ${usedQueryTypesArray.join(', ')} } from 'shiro-orm';`
         : '';
 
     return `${imports}

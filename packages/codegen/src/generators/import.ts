@@ -41,10 +41,10 @@ interface CreateImportDeclarationOptions {
  *
  * const declaration = createImportDeclaration({
  *  identifiers: [{ name: factory.createIdentifier('RONIN') }],
- *  module: factory.createIdentifier('ronin'),
+ *  module: factory.createIdentifier('shiro-orm'),
  *  type: true,
  * });
- * // import type { RONIN } from 'ronin';
+ * // import type { RONIN } from 'shiro-orm';
  * ```
  */
 export const createImportDeclaration = (

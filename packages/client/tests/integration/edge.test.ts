@@ -55,7 +55,7 @@ describe('edge runtime', () => {
     global.process = oldProcess;
 
     expect(error?.message).toMatch(
-      `In the case that the "ronin" package receives a value for its \`triggers\` option, it must also receive a value for its \`waitUntil\` option. This requirement only applies when using an edge runtime and ensures that the edge worker continues to execute until all "following" triggers have been executed.`,
+      `In the case that the "shiro-orm" package receives a value for its \`triggers\` option, it must also receive a value for its \`waitUntil\` option. This requirement only applies when using an edge runtime and ensures that the edge worker continues to execute until all "following" triggers have been executed.`,
     );
   });
 

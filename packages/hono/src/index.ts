@@ -1,8 +1,8 @@
 import { createMiddleware } from 'hono/factory';
-import createFactory from 'ronin';
+import createFactory from 'shiro-orm';
 
 import type { Context } from 'hono';
-import type { QueryHandlerOptions } from 'ronin/types';
+import type { QueryHandlerOptions } from 'shiro-orm/types';
 
 type Factory = ReturnType<typeof createFactory>;
 

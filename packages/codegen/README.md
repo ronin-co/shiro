@@ -9,7 +9,7 @@ This package generates TypeScript code based on RONIN models.
 ## Usage
 ```typescript
 import { generate } from 'shiro-codegen';
-import { model, string } from 'ronin/schema';
+import { model, string } from 'shiro-orm/schema';
 
 const User = model({
   slug: 'user',

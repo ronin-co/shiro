@@ -8,14 +8,14 @@ This package allows for querying data from [RONIN](https://ronin.co) with ease.
 
 ## Setup
 
-First, install the [package](https://www.npmjs.com/package/ronin) with a package manager of your choice:
+First, install the [package](https://www.npmjs.com/package/shiro-orm) with a package manager of your choice:
 
 ```bash
 # Bun
-bun add ronin
+bun add shiro-orm
 
 # npm
-npm install ronin
+npm install shiro-orm
 ```
 
 Next, create a new app token on the [RONIN dashboard](http://ronin.co) (under "Apps" in the sidebar), and add it as a environment variable named `RONIN_TOKEN` to your project.
@@ -23,7 +23,7 @@ Next, create a new app token on the [RONIN dashboard](http://ronin.co) (under "A
 Afterward, you can start invoking RONIN from anywhere in your code:
 
 ```typescript
-import { get } from 'ronin';
+import { get } from 'shiro-orm';
 
 const posts = await get.posts();
 ```
