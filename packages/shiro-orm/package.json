@@ -1,6 +1,6 @@
 {
   "name": "shiro-orm",
-  "version": "6.6.11",
+  "version": "0.0.1",
   "type": "module",
   "description": "Access your RONIN database via TypeScript.",
   "main": "./dist/index.js",

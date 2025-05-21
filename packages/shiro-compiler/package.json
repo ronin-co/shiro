@@ -1,6 +1,6 @@
 {
   "name": "shiro-compiler",
-  "version": "0.18.5",
+  "version": "0.0.1",
   "type": "module",
   "description": "Compiles RONIN queries to SQL statements.",
   "publishConfig": {
