@@ -89,14 +89,9 @@ export default async (
 
     process.exit(0);
   } catch (err) {
-    const message =
-      err instanceof RoninError
-        ? err.message
-        : 'Failed to apply migration';
+    const message = err instanceof RoninError ? err.message : 'Failed to apply migration';
     spinner.fail(message);
-    !(err instanceof RoninError) &&
-      err instanceof Error &&
-      spinner.fail(err.message);
+    !(err instanceof RoninError) && err instanceof Error && spinner.fail(err.message);
 
     process.exit(1);
   }

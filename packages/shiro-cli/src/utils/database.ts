@@ -15,7 +15,6 @@ import { ROOT_MODEL, Transaction } from 'shiro-compiler';
 export const initializeDatabase = async (
   fsPath = '.ronin/db.sqlite',
 ): Promise<Database> => {
-
   const engine = new Engine({
     driver: (engine): BunDriver => new BunDriver({ engine }),
     resolvers: [(engine) => new MemoryResolver({ engine })],

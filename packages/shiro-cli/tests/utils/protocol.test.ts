@@ -50,7 +50,7 @@ describe('protocol', () => {
 
   test('saveSQL method should write SQL statements to disk', async () => {
     const queries = ["create.model({slug: 'my_model', pluralSlug: 'my_models'})"];
-    const protocol = new Protocol( queries);
+    const protocol = new Protocol(queries);
     const fileName = 'migration_sql_test';
     const models: Array<Model> = [];
 

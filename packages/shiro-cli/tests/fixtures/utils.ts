@@ -106,9 +106,7 @@ export const runMigration = async (
 
   return {
     db,
-    models: (await getModels({ db })).map((model) =>
-      convertModelToObjectFields(model),
-    ),
+    models: (await getModels({ db })).map((model) => convertModelToObjectFields(model)),
     statements,
     modelDiff,
   };

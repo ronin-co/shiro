@@ -3,9 +3,7 @@ import { confirm } from '@inquirer/prompts';
 
 import { dirname } from 'node:path';
 import { formatCode } from '@/src/utils/format';
-import {
-  MODEL_IN_CODE_PATH,
-} from '@/src/utils/misc';
+import { MODEL_IN_CODE_PATH } from '@/src/utils/misc';
 import { type ModelWithFieldsArray, getModels } from '@/src/utils/model';
 import { getOrSelectSpaceId } from '@/src/utils/space';
 import { spinner as ora } from '@/src/utils/spinner';
@@ -71,15 +69,13 @@ export default async (
   }
 };
 
-export const getModelDefinitionsFileContent = async (
-  options?: {
-    appToken?: string;
-    sessionToken?: string;
-    local?: boolean;
-    space?: string;
-  },
-): Promise<string | null> => {
-  const models = await getModels( {
+export const getModelDefinitionsFileContent = async (options?: {
+  appToken?: string;
+  sessionToken?: string;
+  local?: boolean;
+  space?: string;
+}): Promise<string | null> => {
+  const models = await getModels({
     token: options?.appToken || options?.sessionToken,
     isLocal: options?.local,
     space: options?.space,

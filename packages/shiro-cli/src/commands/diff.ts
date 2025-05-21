@@ -6,11 +6,7 @@ import { type Model, RoninError } from 'shiro-compiler';
 import apply from '@/src/commands/apply';
 import { initializeDatabase } from '@/src/utils/database';
 import { Migration, type MigrationFlags } from '@/src/utils/migration';
-import {
-  MIGRATIONS_PATH,
-  getModelDefinitions,
-  logTableDiff,
-} from '@/src/utils/misc';
+import { MIGRATIONS_PATH, getModelDefinitions, logTableDiff } from '@/src/utils/misc';
 import { getModels } from '@/src/utils/model';
 import { Protocol } from '@/src/utils/protocol';
 import { getOrSelectSpaceId } from '@/src/utils/space';
@@ -49,7 +45,7 @@ export default async (
     const [existingModels, definedModels] = await Promise.all([
       flags['force-create']
         ? []
-        : getModels( {
+        : getModels({
             db,
             token: appToken ?? sessionToken,
             space,
@@ -84,7 +80,7 @@ export default async (
         await latestProtocol.load(path.join(MIGRATIONS_PATH, latestMigration));
         const latestMigrationDiff = latestProtocol.queries;
 
-        const protocol = new Protocol( modelDiff);
+        const protocol = new Protocol(modelDiff);
         await protocol.convertToQueryObjects();
         const currentMigrationDiff = protocol.queries;
 

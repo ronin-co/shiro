@@ -53,16 +53,11 @@ export default async (
 
     spinner.succeed('Successfully generated types');
   } catch (err) {
-    const message =
-      err instanceof RoninError
-        ? err.message
-        : 'Failed to generate types';
+    const message = err instanceof RoninError ? err.message : 'Failed to generate types';
 
     spinner.fail(message);
 
-    !(err instanceof RoninError) &&
-      err instanceof Error &&
-      spinner.fail(err.message);
+    !(err instanceof RoninError) && err instanceof Error && spinner.fail(err.message);
 
     process.exit(1);
   }

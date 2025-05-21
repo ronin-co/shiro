@@ -26,14 +26,12 @@ export type ModelWithFieldsArray = Omit<Model, 'fields'> & { fields: Array<Model
  *
  * @throws Error if production API request fails.
  */
-export const getModels = async (
-  options?: {
-    db?: Database;
-    token?: string;
-    space?: string;
-    isLocal?: boolean;
-  },
-): Promise<Array<ModelWithFieldsArray>> => {
+export const getModels = async (options?: {
+  db?: Database;
+  token?: string;
+  space?: string;
+  isLocal?: boolean;
+}): Promise<Array<ModelWithFieldsArray>> => {
   const transaction = new Transaction([{ list: { models: null } }]);
   const { db, token, space, isLocal = true } = options || {};
 
@@ -72,7 +70,7 @@ export const getModels = async (
         spinner.stop();
         const sessionToken = await logIn(undefined, false);
         spinner.start();
-        return getModels( { db, token: sessionToken, space, isLocal });
+        return getModels({ db, token: sessionToken, space, isLocal });
       }
 
       throw new Error(`Failed to fetch remote models: ${(error as Error).message}`);

@@ -2,7 +2,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { formatCode } from '@/src/utils/format';
 import { MIGRATIONS_PATH } from '@/src/utils/misc';
-import { type Model, QUERY_SYMBOLS, type Query, type Statement, Transaction } from 'shiro-compiler';
+import {
+  type Model,
+  QUERY_SYMBOLS,
+  type Query,
+  type Statement,
+  Transaction,
+} from 'shiro-compiler';
 import { getBatchProxy, getSyntaxProxy } from 'shiro-syntax/queries';
 
 /**
@@ -19,7 +25,7 @@ export class Protocol {
    *
    * @param roninQueries - Optional array of RONIN query strings to initialize with.
    */
-  constructor( roninQueries: Array<string> = []) {
+  constructor(roninQueries: Array<string> = []) {
     this._roninQueries = roninQueries;
   }
 
