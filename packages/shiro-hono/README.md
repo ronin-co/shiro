@@ -1,7 +1,7 @@
 # Hono + RONIN
 
-[![tests](https://img.shields.io/github/actions/workflow/status/ronin-co/hono-client/validate.yml?label=tests)](https://github.com/ronin-co/hono-client/actions/workflows/validate.yml)
-[![code coverage](https://img.shields.io/codecov/c/github/ronin-co/hono-client)](https://codecov.io/github/ronin-co/hono-client)
+[![tests](https://img.shields.io/github/actions/workflow/status/ronin-co/shiro/validate.yml?label=tests)](https://github.com/ronin-co/shiro/actions/workflows/validate.yml)
+[![code coverage](https://img.shields.io/codecov/c/github/ronin-co/shiro)](https://codecov.io/github/ronin-co/shiro)
 [![install size](https://packagephobia.com/badge?p=shiro-hono)](https://packagephobia.com/result?p=shiro-hono)
 
 A [Hono middleware](https://hono.dev/guides/middleware) for querying data from [RONIN](https://ronin.co) with ease.

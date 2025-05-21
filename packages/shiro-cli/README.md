@@ -1,14 +1,14 @@
 # RONIN CLI
 
-[![tests](https://img.shields.io/github/actions/workflow/status/ronin-co/cli/validate.yml?label=tests)](https://github.com/ronin-co/cli/actions/workflows/validate.yml)
-[![code coverage](https://img.shields.io/codecov/c/github/ronin-co/cli)](https://codecov.io/github/ronin-co/cli)
+[![tests](https://img.shields.io/github/actions/workflow/status/ronin-co/shiro/validate.yml?label=tests)](https://github.com/ronin-co/shiro/actions/workflows/validate.yml)
+[![code coverage](https://img.shields.io/codecov/c/github/ronin-co/shiro)](https://codecov.io/github/ronin-co/shiro)
 [![install size](https://packagephobia.com/badge?p=shiro-cli)](https://packagephobia.com/result?p=shiro-cli)
 
 This package exposes the `ronin` command, which you can run from your terminal to interact with [RONIN](https://ronin.co).
 
 ## Setup
 
-You don't need to install this package explicitly, as it is already included in the [RONIN client](https://github.com/ronin-co/client).
+You don't need to install this package explicitly, as it is already included in the [RONIN client](https://github.com/ronin-co/shiro).
 
 However, we would be excited to welcome your feature suggestions or bug fixes for the RONIN CLI. Read on to learn more about how to suggest changes.
 
@@ -28,7 +28,7 @@ Once that's done, link the package to make it available to all of your local pro
 bun link
 ```
 
-Inside the [shiro-client](https://github.com/ronin-co/client) repo (which imports `shiro-cli` and registers it as an executable), you can then run the following command, which is similar to `bun add shiro-cli` or `npm install shiro-cli`, except that it doesn't install `shiro-cli` from npm, but instead uses your local clone of the package:
+Inside the [shiro-client](https://github.com/ronin-co/shiro) repo (which imports `shiro-cli` and registers it as an executable), you can then run the following command, which is similar to `bun add shiro-cli` or `npm install shiro-cli`, except that it doesn't install `shiro-cli` from npm, but instead uses your local clone of the package:
 
 ```bash
 bun link shiro-cli

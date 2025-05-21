@@ -1,14 +1,14 @@
 # RONIN Compiler
 
-[![tests](https://img.shields.io/github/actions/workflow/status/ronin-co/compiler/validate.yml?label=tests)](https://github.com/ronin-co/compiler/actions/workflows/validate.yml)
-[![code coverage](https://img.shields.io/codecov/c/github/ronin-co/compiler)](https://codecov.io/github/ronin-co/compiler)
+[![tests](https://img.shields.io/github/actions/workflow/status/ronin-co/shiro/validate.yml?label=tests)](https://github.com/ronin-co/shiro/actions/workflows/validate.yml)
+[![code coverage](https://img.shields.io/codecov/c/github/ronin-co/shiro)](https://codecov.io/github/ronin-co/shiro)
 [![install size](https://packagephobia.com/badge?p=shiro-compiler)](https://packagephobia.com/result?p=shiro-compiler)
 
 This package compiles [RONIN queries](https://ronin.co/docs/queries) to [SQLite](https://www.sqlite.org) statements.
 
 ## Setup
 
-You don't need to install this package explicitly, as it is already included in the [RONIN client](https://github.com/ronin-co/client).
+You don't need to install this package explicitly, as it is already included in the [RONIN client](https://github.com/ronin-co/shiro).
 
 However, we would be excited to welcome your feature suggestions or bug fixes for the RONIN compiler. Read on to learn more about how to suggest changes.
 

@@ -1,7 +1,7 @@
 # Better Auth + RONIN
 
-[![tests](https://img.shields.io/github/actions/workflow/status/ronin-co/better-auth/validate.yml?label=tests)](https://github.com/ronin-co/better-auth/actions/workflows/validate.yml)
-[![code coverage](https://img.shields.io/codecov/c/github/ronin-co/better-auth)](https://codecov.io/github/ronin-co/better-auth)
+[![tests](https://img.shields.io/github/actions/workflow/status/ronin-co/shiro/validate.yml?label=tests)](https://github.com/ronin-co/shiro/actions/workflows/validate.yml)
+[![code coverage](https://img.shields.io/codecov/c/github/ronin-co/shiro)](https://codecov.io/github/ronin-co/shiro)
 [![install size](https://packagephobia.com/badge?p=shiro-better-auth)](https://packagephobia.com/result?p=shiro-better-auth)
 
 A [Better Auth adapter](https://www.better-auth.com/docs/concepts/database#adapters) for storing session data in [RONIN](https://ronin.co/) with ease.
