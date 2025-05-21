@@ -11,7 +11,7 @@
         "typescript": "5.8.3",
       },
     },
-    "packages/shiro-better-auth": {
+    "packages/better-auth": {
       "name": "shiro-better-auth",
       "version": "1.0.0",
       "devDependencies": {
@@ -24,7 +24,7 @@
         "shiro-orm": ">=0.1.0",
       },
     },
-    "packages/shiro-cli": {
+    "packages/cli": {
       "name": "shiro-cli",
       "version": "0.3.13",
       "bin": {
@@ -51,7 +51,15 @@
         "shiro-orm": "workspace:*",
       },
     },
-    "packages/shiro-codegen": {
+    "packages/client": {
+      "name": "shiro-orm",
+      "version": "6.6.11",
+      "dependencies": {
+        "shiro-compiler": "workspace:*",
+        "shiro-syntax": "workspace:*",
+      },
+    },
+    "packages/codegen": {
       "name": "shiro-codegen",
       "version": "1.7.4",
       "dependencies": {
@@ -62,7 +70,7 @@
         "shiro-syntax": "workspace:*",
       },
     },
-    "packages/shiro-compiler": {
+    "packages/compiler": {
       "name": "shiro-compiler",
       "version": "0.18.5",
       "devDependencies": {
@@ -70,7 +78,7 @@
         "title": "4.0.1",
       },
     },
-    "packages/shiro-hono": {
+    "packages/hono": {
       "name": "shiro-hono",
       "version": "0.1.2",
       "devDependencies": {
@@ -83,15 +91,7 @@
         "shiro-orm": ">=0.1.0",
       },
     },
-    "packages/shiro-orm": {
-      "name": "shiro-orm",
-      "version": "6.6.11",
-      "dependencies": {
-        "shiro-compiler": "workspace:*",
-        "shiro-syntax": "workspace:*",
-      },
-    },
-    "packages/shiro-syntax": {
+    "packages/syntax": {
       "name": "shiro-syntax",
       "version": "0.2.39",
       "devDependencies": {
@@ -567,19 +567,19 @@
 
     "shebang-regex": ["shebang-regex@3.0.0", "", {}, "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A=="],
 
-    "shiro-better-auth": ["shiro-better-auth@workspace:packages/shiro-better-auth"],
+    "shiro-better-auth": ["shiro-better-auth@workspace:packages/better-auth"],
 
-    "shiro-cli": ["shiro-cli@workspace:packages/shiro-cli"],
+    "shiro-cli": ["shiro-cli@workspace:packages/cli"],
 
-    "shiro-codegen": ["shiro-codegen@workspace:packages/shiro-codegen"],
+    "shiro-codegen": ["shiro-codegen@workspace:packages/codegen"],
 
-    "shiro-compiler": ["shiro-compiler@workspace:packages/shiro-compiler"],
+    "shiro-compiler": ["shiro-compiler@workspace:packages/compiler"],
 
-    "shiro-hono": ["shiro-hono@workspace:packages/shiro-hono"],
+    "shiro-hono": ["shiro-hono@workspace:packages/hono"],
 
-    "shiro-orm": ["shiro-orm@workspace:packages/shiro-orm"],
+    "shiro-orm": ["shiro-orm@workspace:packages/client"],
 
-    "shiro-syntax": ["shiro-syntax@workspace:packages/shiro-syntax"],
+    "shiro-syntax": ["shiro-syntax@workspace:packages/syntax"],
 
     "signal-exit": ["signal-exit@4.1.0", "", {}, "sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw=="],
 
