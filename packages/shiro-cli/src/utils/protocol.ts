@@ -2,15 +2,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { formatCode } from '@/src/utils/format';
 import { MIGRATIONS_PATH } from '@/src/utils/misc';
-import type { LocalPackages } from '@/src/utils/misc';
-import { type Model, QUERY_SYMBOLS, type Query, type Statement } from 'shiro-compiler';
+import { type Model, QUERY_SYMBOLS, type Query, type Statement, Transaction } from 'shiro-compiler';
+import { getBatchProxy, getSyntaxProxy } from 'shiro-syntax/queries';
 
 /**
  * Protocol represents a set of database migration queries that can be executed in sequence.
  * It provides functionality to generate, save and load migration files and SQL statements.
  */
 export class Protocol {
-  private _packages: LocalPackages;
   private _queries: Array<Query> = [];
   private _roninQueries: Array<string>;
   private _protocolDir = MIGRATIONS_PATH;
@@ -18,11 +17,9 @@ export class Protocol {
   /**
    * Creates a new Protocol instance.
    *
-   * @param packages - A list of locally available RONIN packages.
    * @param roninQueries - Optional array of RONIN query strings to initialize with.
    */
-  constructor(packages: LocalPackages, roninQueries: Array<string> = []) {
-    this._packages = packages;
+  constructor( roninQueries: Array<string> = []) {
     this._roninQueries = roninQueries;
   }
 
@@ -49,8 +46,6 @@ export class Protocol {
    * @private
    */
   private queryToObject = (query: string): Query => {
-    const { getSyntaxProxy } = this._packages.syntax;
-
     const queryTypes = [
       'get',
       'set',
@@ -157,7 +152,6 @@ export default () => [
 
     const queries = await import(filePath);
 
-    const { getBatchProxy } = this._packages.syntax;
     const queryObjects = getBatchProxy(() => queries.default());
 
     this._queries = queryObjects.map((query: { structure: Query }) => query.structure);
@@ -205,8 +199,6 @@ export default () => [
    * @returns Array of SQL statements.
    */
   getSQLStatements = (models: Array<Model>): Array<Statement> => {
-    const { Transaction } = this._packages.compiler;
-
     return new Transaction(this._queries, {
       models,
       inlineParams: true,

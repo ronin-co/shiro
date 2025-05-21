@@ -4,9 +4,7 @@ import { confirm } from '@inquirer/prompts';
 import { dirname } from 'node:path';
 import { formatCode } from '@/src/utils/format';
 import {
-  type LocalPackages,
   MODEL_IN_CODE_PATH,
-  getLocalPackages,
 } from '@/src/utils/misc';
 import { type ModelWithFieldsArray, getModels } from '@/src/utils/model';
 import { getOrSelectSpaceId } from '@/src/utils/space';
@@ -25,13 +23,11 @@ export default async (
   local?: boolean,
 ): Promise<void> => {
   const spinner = ora.start('Pulling models');
-  const packages = await getLocalPackages();
-
   const space = await getOrSelectSpaceId(appToken, spinner);
 
   try {
     // Get models from RONIN schema.
-    const modelDefinitions = await getModelDefinitionsFileContent(packages, {
+    const modelDefinitions = await getModelDefinitionsFileContent({
       appToken,
       sessionToken,
       local,
@@ -76,7 +72,6 @@ export default async (
 };
 
 export const getModelDefinitionsFileContent = async (
-  packages: LocalPackages,
   options?: {
     appToken?: string;
     sessionToken?: string;
@@ -84,7 +79,7 @@ export const getModelDefinitionsFileContent = async (
     space?: string;
   },
 ): Promise<string | null> => {
-  const models = await getModels(packages, {
+  const models = await getModels( {
     token: options?.appToken || options?.sessionToken,
     isLocal: options?.local,
     space: options?.space,

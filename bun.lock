@@ -42,21 +42,12 @@
         "json5": "2.2.3",
         "open": "10.1.0",
         "ora": "8.1.1",
-        "resolve-from": "5.0.0",
       },
       "devDependencies": {
         "@types/ini": "4.1.1",
         "bun-bagel": "1.1.0",
         "shiro-compiler": "workspace:*",
         "shiro-orm": "workspace:*",
-      },
-    },
-    "packages/shiro-client": {
-      "name": "shiro-orm",
-      "version": "6.6.11",
-      "dependencies": {
-        "shiro-compiler": "workspace:*",
-        "shiro-syntax": "workspace:*",
       },
     },
     "packages/shiro-codegen": {
@@ -89,6 +80,14 @@
       "peerDependencies": {
         "hono": ">=3.9.0",
         "shiro-orm": ">=0.1.0",
+      },
+    },
+    "packages/shiro-orm": {
+      "name": "shiro-orm",
+      "version": "6.6.11",
+      "devDependencies": {
+        "shiro-compiler": "workspace:*",
+        "shiro-syntax": "workspace:*",
       },
     },
     "packages/shiro-syntax": {
@@ -577,7 +576,7 @@
 
     "shiro-hono": ["shiro-hono@workspace:packages/shiro-hono"],
 
-    "shiro-orm": ["shiro-orm@workspace:packages/shiro-client"],
+    "shiro-orm": ["shiro-orm@workspace:packages/shiro-orm"],
 
     "shiro-syntax": ["shiro-syntax@workspace:packages/shiro-syntax"],
 
