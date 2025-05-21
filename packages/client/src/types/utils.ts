@@ -2,7 +2,7 @@ import type { AsyncLocalStorage } from 'node:async_hooks';
 
 import type { Triggers } from '@/src/utils/triggers';
 
-import type { Model, Result, ResultRecord } from '@ronin/compiler';
+import type { Model, Result, ResultRecord } from 'shiro-compiler';
 
 export interface QueryHandlerOptions {
   /**

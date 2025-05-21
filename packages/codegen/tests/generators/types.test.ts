@@ -8,7 +8,7 @@ import {
   model,
   number,
   string,
-} from '@ronin/syntax/schema';
+} from 'shiro-syntax/schema';
 
 import { generateTypes } from '@/src/generators/types';
 import { printNodes } from '@/src/utils/print';

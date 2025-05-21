@@ -1,5 +1,5 @@
 {
-  "name": "@ronin/hono",
+  "name": "shiro-hono",
   "version": "0.1.2",
   "type": "module",
   "description": "Access your RONIN database via Hono.",
@@ -28,17 +28,17 @@
   "devDependencies": {
     "hono": "4.6.17",
     "msw": "2.7.0",
-    "ronin": "workspace:*"
+    "shiro-orm": "workspace:*"
   },
   "peerDependencies": {
     "hono": ">=3.9.0",
-    "ronin": ">=6.6.11"
+    "shiro-orm": ">=0.1.0"
   },
   "peerDependenciesMeta": {
     "hono": {
       "optional": false
     },
-    "ronin": {
+    "shiro-orm": {
       "optional": false
     }
   }

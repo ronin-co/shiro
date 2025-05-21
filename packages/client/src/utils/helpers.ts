@@ -1,6 +1,6 @@
 import type { QueryHandlerOptions } from '@/src/types/utils';
-import type { ResultRecord } from '@ronin/compiler';
-import { getProperty, setProperty } from '@ronin/syntax/queries';
+import type { ResultRecord } from 'shiro-compiler';
+import { getProperty, setProperty } from 'shiro-syntax/queries';
 
 const SPLIT_REGEX = /(?=[A-Z])|[.\-\s_]/;
 

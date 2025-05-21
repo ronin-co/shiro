@@ -3,7 +3,7 @@ import path from 'node:path';
 import { formatCode } from '@/src/utils/format';
 import { MIGRATIONS_PATH } from '@/src/utils/misc';
 import type { LocalPackages } from '@/src/utils/misc';
-import { type Model, QUERY_SYMBOLS, type Query, type Statement } from '@ronin/compiler';
+import { type Model, QUERY_SYMBOLS, type Query, type Statement } from 'shiro-compiler';
 
 /**
  * Protocol represents a set of database migration queries that can be executed in sequence.

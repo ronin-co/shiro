@@ -14,7 +14,7 @@ import { Protocol } from '@/src/utils/protocol';
 import { getOrSelectSpaceId } from '@/src/utils/space';
 import { type Status, spinner } from '@/src/utils/spinner';
 import { confirm } from '@inquirer/prompts';
-import type { Model } from '@ronin/compiler';
+import type { Model } from 'shiro-compiler';
 
 /**
  * Creates a new migration based on model differences.

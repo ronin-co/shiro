@@ -1,5 +1,5 @@
 {
-  "name": "@ronin/cli",
+  "name": "shiro-cli",
   "version": "0.3.13",
   "type": "module",
   "description": "The command-line interface for RONIN.",
@@ -7,7 +7,7 @@
     "access": "public"
   },
   "bin": {
-    "ronin": "./dist/bin/index.js"
+    "shiro": "./dist/bin/index.js"
   },
   "files": [
     "dist"
@@ -41,7 +41,7 @@
   "devDependencies": {
     "@types/ini": "4.1.1",
     "bun-bagel": "1.1.0",
-    "@ronin/compiler": "workspace:*",
-    "ronin": "workspace:*"
+    "shiro-compiler": "workspace:*",
+    "shiro-orm": "workspace:*"
   }
 }

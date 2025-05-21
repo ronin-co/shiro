@@ -1,5 +1,5 @@
 {
-  "name": "@ronin/syntax",
+  "name": "shiro-syntax",
   "version": "0.2.39",
   "type": "module",
   "description": "Allows for defining RONIN queries and schemas in code.",
@@ -38,6 +38,6 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "expect-type": "1.2.0",
-    "@ronin/compiler": "workspace:*"
+    "shiro-compiler": "workspace:*"
   }
 }

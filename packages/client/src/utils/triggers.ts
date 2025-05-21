@@ -18,7 +18,7 @@ import {
   type QuerySchemaType,
   type QueryType,
   type ResultRecord,
-} from '@ronin/compiler';
+} from 'shiro-compiler';
 
 const EMPTY = Symbol('empty');
 

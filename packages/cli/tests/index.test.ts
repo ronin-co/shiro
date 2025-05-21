@@ -24,9 +24,9 @@ import * as sessionModule from '@/src/utils/session';
 import * as spaceModule from '@/src/utils/space';
 import * as confirmModule from '@inquirer/prompts';
 import * as selectModule from '@inquirer/prompts';
-import type { Model } from '@ronin/compiler';
 import * as getPort from 'get-port';
 import * as open from 'open';
+import type { Model } from 'shiro-compiler';
 
 describe('CLI', () => {
   // Store original values

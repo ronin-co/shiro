@@ -7,8 +7,8 @@ import {
   getResponseBody,
 } from '@/src/utils/misc';
 import { spinner } from '@/src/utils/spinner';
-import type { Model, ModelField } from '@ronin/compiler';
 import type { Database, Row } from '@ronin/engine/resources';
+import type { Model, ModelField } from 'shiro-compiler';
 
 /**
  * A model with fields in array format.

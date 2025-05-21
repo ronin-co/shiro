@@ -1,5 +1,5 @@
-import type { Model } from '@ronin/compiler';
 import { blob, boolean, date, json, link, model, number, string } from 'ronin/schema';
+import type { Model } from 'shiro-compiler';
 
 export const CONSTANTS = {
   FIRSTNAME: 'Cornelius',

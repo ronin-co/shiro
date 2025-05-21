@@ -5,7 +5,7 @@ import { createImportDeclaration } from '@/src/generators/import';
 
 /**
  * ```ts
- * import type { AddQuery, CountQuery, GetQuery, ListQuery, Model, RemoveQuery, SetQuery } from "@ronin/compiler";
+ * import type { AddQuery, CountQuery, GetQuery, ListQuery, Model, RemoveQuery, SetQuery } from "shiro-compiler";
  * ```
  */
 export const importRoninQueryTypesType = createImportDeclaration({
@@ -24,7 +24,7 @@ export const importRoninQueryTypesType = createImportDeclaration({
 
 /**
  * ```ts
- * import type { StoredObject } from "@ronin/compiler";
+ * import type { StoredObject } from "shiro-compiler";
  * ```
  */
 export const importRoninStoredObjectType = createImportDeclaration({
@@ -35,7 +35,7 @@ export const importRoninStoredObjectType = createImportDeclaration({
 
 /**
  * ```ts
- * import type { DeepCallable, ResultRecord } from "@ronin/syntax/queries";
+ * import type { DeepCallable, ResultRecord } from "shiro-syntax/queries";
  * ```
  */
 export const importSyntaxUtiltypesType = createImportDeclaration({

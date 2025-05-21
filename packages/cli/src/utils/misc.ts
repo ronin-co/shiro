@@ -6,10 +6,10 @@ import { CompareModels } from '@/src/utils/field';
 import { convertModelToArrayFields } from '@/src/utils/model';
 import { spinner } from '@/src/utils/spinner';
 import { input } from '@inquirer/prompts';
-import type { Model, Result } from '@ronin/compiler';
-import type * as CompilerPackage from '@ronin/compiler';
-import type * as SyntaxPackage from '@ronin/syntax/queries';
 import resolveFrom from 'resolve-from';
+import type { Model, Result } from 'shiro-compiler';
+import type * as CompilerPackage from 'shiro-compiler';
+import type * as SyntaxPackage from 'shiro-syntax/queries';
 
 /** Represents a data item for logging */
 interface DataItem {
@@ -420,7 +420,7 @@ const getPackage = <Name extends 'syntax/queries' | 'compiler'>(
 
   if (!roninSyntaxPath) {
     throw new Error(
-      'The "ronin" package must be installed in your project in order to create migrations.',
+      'The "shiro-orm" package must be installed in your project in order to create migrations.',
     );
   }
 

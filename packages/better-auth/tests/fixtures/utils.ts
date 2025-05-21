@@ -1,17 +1,17 @@
-import { ROOT_MODEL, Transaction } from '@ronin/compiler';
 import { Engine } from '@ronin/engine';
 import { BunDriver } from '@ronin/engine/drivers/bun';
 import { MemoryResolver } from '@ronin/engine/resolvers/memory';
 import { betterAuth } from 'better-auth';
 import { bearer } from 'better-auth/plugins';
 import { createSyntaxFactory } from 'ronin';
+import { ROOT_MODEL, Transaction } from 'shiro-compiler';
 
 import { Account, Session, User, Verification } from '@/fixtures/schema';
 import { ronin } from '@/index';
 
-import type { Model, Query, ResultRecord } from '@ronin/compiler';
 import type { Database } from '@ronin/engine/resources';
 import type { BetterAuthOptions } from 'better-auth';
+import type { Model, Query, ResultRecord } from 'shiro-compiler';
 
 const engine = new Engine({
   driver: (engine): BunDriver => new BunDriver({ engine }),

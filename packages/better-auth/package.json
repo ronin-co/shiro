@@ -1,5 +1,5 @@
 {
-  "name": "@ronin/better-auth",
+  "name": "shiro-better-auth",
   "version": "1.0.0",
   "type": "module",
   "description": "A Better Auth adapter for RONIN",
@@ -33,18 +33,18 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@ronin/engine": "0.1.16",
-    "@ronin/compiler": "workspace:*",
-    "ronin": "workspace:*"
+    "shiro-compiler": "workspace:*",
+    "shiro-orm": "workspace:*"
   },
   "peerDependencies": {
     "better-auth": ">=1.2.5",
-    "ronin": ">=6.6.11"
+    "shiro-orm": ">=0.1.0"
   },
   "peerDependenciesMeta": {
     "better-auth": {
       "optional": false
     },
-    "ronin": {
+    "shiro-orm": {
       "optional": false
     }
   }

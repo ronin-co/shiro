@@ -16,7 +16,7 @@ import type {
   Result,
   ResultRecord,
   Statement,
-} from '@ronin/compiler';
+} from 'shiro-compiler';
 
 interface RequestPayload {
   queries?: Array<Query>;

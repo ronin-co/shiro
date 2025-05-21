@@ -1,5 +1,5 @@
 {
-  "name": "ronin",
+  "name": "shiro-orm",
   "version": "6.6.11",
   "type": "module",
   "description": "Access your RONIN database via TypeScript.",
@@ -65,7 +65,7 @@
     "node": ">=18.17.0"
   },
   "dependencies": {
-    "@ronin/compiler": "workspace:*",
-    "@ronin/syntax": "workspace:*"
+    "shiro-compiler": "workspace:*",
+    "shiro-syntax": "workspace:*"
   }
 }

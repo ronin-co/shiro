@@ -23,7 +23,7 @@ import {
 
 import { stderr } from 'node:process';
 import { Account, CONSTANTS, TestA, TestB } from '@/fixtures/index';
-import type { Model } from '@ronin/compiler';
+import type { Model } from 'shiro-compiler';
 
 describe('misc', () => {
   beforeEach(() => {

@@ -11,7 +11,7 @@ import {
   type ResolvingAddTrigger,
   runQueriesWithTriggers,
 } from '@/src/utils/triggers';
-import type { CombinedInstructions, Query, QueryType } from '@ronin/compiler';
+import type { CombinedInstructions, Query, QueryType } from 'shiro-compiler';
 
 let mockResolvedRequestText: any;
 

@@ -1,1 +1,1 @@
-export * from '@ronin/syntax/schema';
+export * from 'shiro-syntax/schema';

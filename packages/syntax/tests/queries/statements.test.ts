@@ -1,7 +1,7 @@
 import { describe, expect, spyOn, test } from 'bun:test';
 import { getBatchProxySQL, getSyntaxProxySQL } from '@/src/queries';
-import type { Statement } from '@ronin/compiler';
 import { expectTypeOf } from 'expect-type';
+import type { Statement } from 'shiro-compiler';
 
 test('using raw SQL', async () => {
   let statement: Statement | undefined;

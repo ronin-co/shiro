@@ -34,9 +34,9 @@ import { getRowCount, getSQLTables, getTableRows, runMigration } from '@/fixture
 import { applyMigrationStatements } from '@/src/commands/apply';
 import type { MigrationFlags } from '@/src/utils/migration';
 import { getLocalPackages } from '@/src/utils/misc';
-import type { Model } from '@ronin/compiler';
 import type { Database } from '@ronin/engine/resources';
 import { model, number, random, string } from 'ronin/schema';
+import type { Model } from 'shiro-compiler';
 const packages = await getLocalPackages();
 const { Transaction } = packages.compiler;
 

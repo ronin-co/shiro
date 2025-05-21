@@ -1,9 +1,9 @@
 import { BetterAuthError } from 'better-auth';
 
-import type { Model as BaseModel, ResultRecordBase } from '@ronin/compiler';
-import type { CombinedInstructions } from '@ronin/compiler';
 import type { Where } from 'better-auth';
 import type { createSyntaxFactory } from 'ronin';
+import type { Model as BaseModel, ResultRecordBase } from 'shiro-compiler';
+import type { CombinedInstructions } from 'shiro-compiler';
 
 type Model = Omit<BaseModel, 'pluralSlug'> & Required<Pick<BaseModel, 'pluralSlug'>>;
 

@@ -1,5 +1,5 @@
 {
-  "name": "@ronin/compiler",
+  "name": "shiro-compiler",
   "version": "0.18.5",
   "type": "module",
   "description": "Compiles RONIN queries to SQL statements.",

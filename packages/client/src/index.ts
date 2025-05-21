@@ -18,7 +18,7 @@ import {
   type RemoveQuery,
   type SetQuery,
   type Statement,
-} from '@ronin/compiler';
+} from 'shiro-compiler';
 import {
   type DeepCallable,
   type SyntaxItem,
@@ -26,8 +26,8 @@ import {
   getBatchProxySQL,
   getSyntaxProxy,
   getSyntaxProxySQL,
-} from '@ronin/syntax/queries';
-import type { Model } from '@ronin/syntax/schema';
+} from 'shiro-syntax/queries';
+import type { Model } from 'shiro-syntax/schema';
 
 /**
  * Creates a syntax factory for generating and executing queries.

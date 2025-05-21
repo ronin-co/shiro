@@ -2,20 +2,20 @@
 
 [![tests](https://img.shields.io/github/actions/workflow/status/ronin-co/hono-client/validate.yml?label=tests)](https://github.com/ronin-co/hono-client/actions/workflows/validate.yml)
 [![code coverage](https://img.shields.io/codecov/c/github/ronin-co/hono-client)](https://codecov.io/github/ronin-co/hono-client)
-[![install size](https://packagephobia.com/badge?p=@ronin/hono)](https://packagephobia.com/result?p=@ronin/hono)
+[![install size](https://packagephobia.com/badge?p=shiro-hono)](https://packagephobia.com/result?p=shiro-hono)
 
 A [Hono middleware](https://hono.dev/guides/middleware) for querying data from [RONIN](https://ronin.co) with ease.
 
 ## Setup
 
-First, install the [package](https://www.npmjs.com/package/@ronin/hono) with a package manager of your choice:
+First, install the [package](https://www.npmjs.com/package/shiro-hono) with a package manager of your choice:
 
 ```bash
 # Bun
-bun add @ronin/hono
+bun add shiro-hono
 
 # npm
-npm install @ronin/hono
+npm install shiro-hono
 ```
 
 Next, create a new app token on the [RONIN dashboard](http://ronin.co) (under "Apps" in the sidebar), and add it as a environment variable named `RONIN_TOKEN` to your Hono context.
@@ -24,7 +24,7 @@ Once added, you can import and use the middleware in your Hono app:
 
 ```typescript
 import { Hono } from "hono";
-import { ronin } from "@ronin/hono";
+import { ronin } from "shiro-hono";
 
 const app = new Hono();
 
@@ -46,7 +46,7 @@ Out of the box, we also export the required `Bindings` and `Variables` types, wh
 
 ```ts
 import { Hono } from "hono";
-import { ronin, type Bindings, type Variables } from "@ronin/hono";
+import { ronin, type Bindings, type Variables } from "shiro-hono";
 
 const app = new Hono<{
   Bindings: Bindings;
@@ -74,10 +74,10 @@ Once that's done, link the package to make it available to all of your local pro
 bun link
 ```
 
-Inside your project, you can then run the following command, which is similar to `bun add @ronin/hono` or `npm install @ronin/hono`, except that it doesn't install `@ronin/hono` from npm, but instead uses your local clone of the package:
+Inside your project, you can then run the following command, which is similar to `bun add shiro-hono` or `npm install shiro-hono`, except that it doesn't install `shiro-hono` from npm, but instead uses your local clone of the package:
 
 ```bash
-bun link @ronin/hono
+bun link shiro-hono
 ```
 
 If your project is not yet compatible with [Bun](https://bun.sh), feel free to replace all of the occurances of the word `bun` in the commands above with `npm` instead.

@@ -1,8 +1,8 @@
 import { describe, expect, test } from 'bun:test';
 import { getSyntaxProxy } from '@/src/queries';
 import { blob, boolean, date, json, link, model, number, string } from '@/src/schema';
-import { type GetQuery, QUERY_SYMBOLS, type StoredObject } from '@ronin/compiler';
 import { expectTypeOf } from 'expect-type';
+import { type GetQuery, QUERY_SYMBOLS, type StoredObject } from 'shiro-compiler';
 
 describe('models', () => {
   test('create empty model', () => {

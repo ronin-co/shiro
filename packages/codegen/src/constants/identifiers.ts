@@ -23,7 +23,7 @@ export const identifiers = {
     },
     model: factory.createIdentifier('Model'),
     module: {
-      root: factory.createIdentifier(JSON.stringify('@ronin/compiler')),
+      root: factory.createIdentifier(JSON.stringify('shiro-compiler')),
     },
     storedObject: factory.createIdentifier('StoredObject'),
   },
@@ -45,7 +45,7 @@ export const identifiers = {
   syntax: {
     deepCallable: factory.createIdentifier('DeepCallable'),
     module: {
-      queries: factory.createIdentifier(JSON.stringify('@ronin/syntax/queries')),
+      queries: factory.createIdentifier(JSON.stringify('shiro-syntax/queries')),
     },
     resultRecord: factory.createIdentifier('ResultRecord'),
   },
@@ -59,7 +59,7 @@ export const identifiers = {
 } satisfies Record<string, Record<string, Identifier | Record<string, Identifier>>>;
 
 /**
- * A list of all generic names used in the `@ronin/codegen` package.
+ * A list of all generic names used in the `shiro-codegen` package.
  *
  * Similar to `identifiers` but designed specifically for use as generic names.
  */

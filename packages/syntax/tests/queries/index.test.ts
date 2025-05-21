@@ -3,6 +3,7 @@ import { describe, expect, spyOn, test } from 'bun:test';
 import { op } from '@/src/helpers/expressions';
 import { type SyntaxItem, getBatchProxy, getSyntaxProxy } from '@/src/queries';
 import { concat, string } from '@/src/schema';
+import { expectTypeOf } from 'expect-type';
 import {
   type AddQuery,
   type AlterQuery,
@@ -16,8 +17,7 @@ import {
   QUERY_SYMBOLS,
   type Query,
   type SetQuery,
-} from '@ronin/compiler';
-import { expectTypeOf } from 'expect-type';
+} from 'shiro-compiler';
 
 describe('syntax proxy', () => {
   test('using sub query', () => {
