@@ -1,8 +1,9 @@
 import { afterEach, describe, expect, jest, spyOn, test } from 'bun:test';
 import fs, { type PathOrFileDescriptor } from 'node:fs';
+import type { Model, Statement } from 'shiro-compiler';
+
 import { getLocalPackages } from '@/src/utils/misc';
 import { Protocol } from '@/src/utils/protocol';
-import type { Model, Statement } from '@ronin/compiler';
 
 describe('protocol', () => {
   afterEach(() => {
