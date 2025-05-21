@@ -743,7 +743,7 @@ describe('CLI', () => {
         await run({ version: '1.0.0' });
 
         expect(writeFileSyncSpy.mock.calls[0][1]).toContain(
-          `import { drop } from \"ronin\";\n\nexport default () => [\n  drop.model(\"user\"),\n];\n`,
+          `import { drop } from \"shiro-orm\";\n\nexport default () => [\n  drop.model(\"user\"),\n];\n`,
         );
       });
 
