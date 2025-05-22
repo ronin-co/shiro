@@ -6,6 +6,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ronin-co/shiro",
+    "directory": "packages/shiro-cli"
+  },
   "bin": {
     "shiro": "./dist/bin/index.js"
   },
