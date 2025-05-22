@@ -1,0 +1,23 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "The docs of Shiro",
+  "main": "index.js",
+  "scripts": {
+    "dev": "mint dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronin-co/shiro.git"
+  },
+  "keywords": [],
+  "author": "ronin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ronin-co/shiro/issues"
+  },
+  "homepage": "https://github.com/ronin-co/shiro#readme",
+  "dependencies": {
+    "mint": "4.1.17"
+  }
+}

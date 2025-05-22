@@ -1,0 +1,76 @@
+{
+	"$schema": "https://mintlify.com/docs.json",
+	"theme": "maple",
+	"name": "ORM",
+	"colors": {
+		"primary": "#a6a4a4",
+		"light": "#e6e6e6",
+		"dark": "#7d7d7d"
+	},
+	"favicon": "/favicon.svg",
+	"navigation": {
+		"dropdowns": [
+			{
+				"dropdown": "ORM",
+				"description": "Query SQLite databases",
+				"icon": "code",
+				"groups": [
+					{
+						"group": "Get Started",
+						"pages": ["index", "quickstart", "factory"]
+					},
+					{
+						"group": "Essentials",
+						"pages": [
+							"essentials/pagination",
+							"essentials/triggers",
+							"essentials/relations",
+							"essentials/types"
+						]
+					},
+					{
+						"group": "Schema",
+						"pages": ["schema/models", "schema/fields"]
+					},
+					{
+						"group": "Querying",
+						"pages": [
+							"querying/syntax",
+							"querying/crud",
+							"querying/instructions",
+							"querying/functions"
+						]
+					}
+				]
+			},
+			{
+				"dropdown": "Engine",
+				"href": "https://github.com/ronin-co/engine",
+				"icon": "rotate"
+			},
+			{
+				"dropdown": "Framework",
+				"href": "https://github.com/ronin-co/blade",
+				"icon": "browser"
+			}
+		]
+	},
+	"navbar": {
+		"links": [
+			{
+				"label": "Chat",
+				"href": "https://discord.gg/ronin"
+			},
+			{
+				"label": "Updates",
+				"href": "https://x.com/ronin"
+			}
+		]
+	},
+	"footer": {
+		"socials": {
+			"x": "https://x.com/ronin",
+			"github": "https://github.com/ronin-co"
+		}
+	}
+}
