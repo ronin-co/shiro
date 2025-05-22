@@ -1,7 +1,7 @@
 {
   "name": "orm",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": ["packages/*", "docs"],
   "packageManager": "bun@1.2.13",
   "scripts": {
     "build": "turbo build",
