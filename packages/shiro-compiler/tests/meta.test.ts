@@ -846,7 +846,7 @@ test('create new field with default value (json)', async () => {
 });
 
 // Assert that invalid objects are being rejected as default values of JSON fields.
-test('create new field with default value (invalid json)', async () => {
+test('create new field with default value (invalid json)', () => {
   const field: ModelField = {
     type: 'json',
     slug: 'settings',
