@@ -576,7 +576,6 @@ describe('CLI', () => {
           {
             slug: 'user',
             fields: {
-              // @ts-expect-error This is a mock.
               name: { type: 'string' },
             },
           },
@@ -980,10 +979,12 @@ describe('CLI', () => {
             (call) => typeof call[0] === 'string' && call[0].includes('Generating types'),
           ),
         ).toBe(true);
+
         expect(
           stderrSpy.mock.calls.some(
             (call) =>
-              typeof call[0] === 'string' && call[0].includes('Failed to generate types'),
+              typeof call[0] === 'string' &&
+              call[0].includes('Successfully generated types'),
           ),
         ).toBe(true);
       });

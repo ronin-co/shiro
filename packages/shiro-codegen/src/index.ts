@@ -10,11 +10,12 @@ import {
 } from '@/src/declarations';
 import { generateModule } from '@/src/generators/module';
 import { generateTypes } from '@/src/generators/types';
+import type { Model } from '@/src/types/model';
 import { printNodes } from '@/src/utils/print';
 
 import type { Node } from 'typescript';
 
-import type { Model } from '@/src/types/model';
+export type { Model } from '@/src/types/model';
 
 /**
  * Generates the complete `index.d.ts` file for a list of RONIN models.
