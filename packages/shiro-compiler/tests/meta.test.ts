@@ -884,7 +884,7 @@ test('create new field with default value (invalid json)', async () => {
     'The default value of JSON field "settings" must be an object.',
   );
   expect(error).toHaveProperty('code', 'INVALID_MODEL_VALUE');
-  expect(error).toHaveProperty('fields', ['fields']);
+  expect(error).toHaveProperty('field', 'fields');
 });
 
 // Ensure that, if the `slug` of a field changes during a model update, an `ALTER TABLE`
@@ -1782,7 +1782,7 @@ test('try to create new index without fields', () => {
     'When creating indexes, at least one field must be provided.',
   );
   expect(error).toHaveProperty('code', 'INVALID_MODEL_VALUE');
-  expect(error).toHaveProperty('fields', ['indexes']);
+  expect(error).toHaveProperty('field', 'indexes');
 });
 
 test('try to create new index with non-existent field', () => {

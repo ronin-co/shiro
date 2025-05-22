@@ -403,7 +403,7 @@ const getFieldStatement = (
         throw new RoninError({
           message: `The default value of JSON field "${field.slug}" must be an object.`,
           code: 'INVALID_MODEL_VALUE',
-          fields: ['fields'],
+          field: 'fields',
         });
       }
 
@@ -975,7 +975,7 @@ export const transformMetaQuery = (
         throw new RoninError({
           message: `When ${actionReadable} ${PLURAL_MODEL_ENTITIES[entity]}, at least one field must be provided.`,
           code: 'INVALID_MODEL_VALUE',
-          fields: [PLURAL_MODEL_ENTITIES[entity]],
+          field: PLURAL_MODEL_ENTITIES[entity],
         });
       }
 
