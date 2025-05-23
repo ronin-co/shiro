@@ -43,6 +43,9 @@ export interface QueryHandlerOptions {
    * provide the desired database name here.
    */
   database?: string;
+
+  /** A list of models defined during development. */
+  models?: Record<string, Record<string, unknown>> | Array<Model>;
 }
 
 /**
