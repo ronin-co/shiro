@@ -98,6 +98,7 @@ export const runQueries = async <T extends ResultRecord>(
       ? options.models
       : (Object.values(options.models) as unknown as Array<Model>);
 
+    const { queries } = operations.default;
     transaction = new Transaction(queries, { models });
 
     delete operations.default.queries;
