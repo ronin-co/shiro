@@ -4,10 +4,11 @@
   "dts": true,
   "format": "esm",
   "entry": [
-    "src/index.ts",
+    "src/adapters/bun.ts",
     "src/bin/index.ts",
-    "src/types/index.ts",
+    "src/index.ts",
     "src/schema/index.ts",
+    "src/types/index.ts",
     "src/utils/index.ts"
   ],
   "external": ["@ronin/engine"]
