@@ -1,6 +1,6 @@
 {
   "name": "shiro-codegen",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "Generates TypeScript code from RONIN models.",
   "publishConfig": {
@@ -8,7 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ronin-co/shiro"
+    "url": "https://github.com/ronin-co/shiro",
+    "directory": "packages/shiro-codegen"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

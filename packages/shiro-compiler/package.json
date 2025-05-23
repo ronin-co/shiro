@@ -1,10 +1,15 @@
 {
   "name": "shiro-compiler",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "Compiles RONIN queries to SQL statements.",
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ronin-co/shiro",
+    "directory": "packages/shiro-compiler"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

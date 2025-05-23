@@ -1,6 +1,6 @@
 {
   "name": "shiro-orm",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "Access your RONIN database via TypeScript.",
   "main": "./dist/index.js",
@@ -66,7 +66,10 @@
   ],
   "author": "ronin",
   "license": "Apache-2.0",
-  "repository": "ronin-co/shiro",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ronin-co/shiro"
+  },
   "homepage": "https://ronin.co/docs/typescript-client",
   "engines": {
     "node": ">=18.17.0"

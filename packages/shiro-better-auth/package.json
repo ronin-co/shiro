@@ -1,6 +1,6 @@
 {
   "name": "shiro-better-auth",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "A Better Auth adapter for RONIN",
   "publishConfig": {
@@ -8,7 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ronin-co/shiro"
+    "url": "https://github.com/ronin-co/shiro",
+    "directory": "packages/shiro-better-auth"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
