@@ -10,12 +10,14 @@ import { WRITE_QUERY_TYPES } from '@/src/utils/constants';
 import { getResponseBody } from '@/src/utils/errors';
 import { formatDateFields } from '@/src/utils/helpers';
 import { runQueriesWithTriggers } from '@/src/utils/triggers';
-import type {
-  Query,
-  RegularResult,
-  Result,
-  ResultRecord,
-  Statement,
+import {
+  type Model,
+  type Query,
+  type RegularResult,
+  type Result,
+  type ResultRecord,
+  type Statement,
+  Transaction,
 } from 'shiro-compiler';
 
 interface RequestPayload {
@@ -47,7 +49,7 @@ export const runQueries = async <T extends ResultRecord>(
   options: QueryHandlerOptions = {},
 ): Promise<ResultsPerDatabase<T>> => {
   let hasWriteQuery: boolean | null = null;
-  let hasSingleQuery = true;
+  let hasSingleDatabase = true;
 
   const operations = queries.reduce(
     (acc, details) => {
@@ -56,7 +58,7 @@ export const runQueries = async <T extends ResultRecord>(
 
       // If a database is being selected that isn't the default database, that means a
       // different format should be chosen for the request body.
-      if (database !== 'default') hasSingleQuery = false;
+      if (database !== 'default') hasSingleDatabase = false;
 
       if ('query' in details) {
         const { query } = details;
@@ -85,7 +87,28 @@ export const runQueries = async <T extends ResultRecord>(
     {} as Record<string, RequestPayload>,
   );
 
-  const requestBody: RequestBody = hasSingleQuery ? operations.default : operations;
+  let transaction: InstanceType<typeof Transaction> | null = null;
+
+  if (options.models && hasSingleDatabase && operations.default.queries) {
+    // If a list of models was provided to the client and the list is an array, we can
+    // pass it to the compiler directly. If it's an object instead, that means a list of
+    // models defined in code (in a dedicated TypeScript file) was provided, so we need
+    // to convert it to an array before passing it to the compiler.
+    const models = Array.isArray(options.models)
+      ? options.models
+      : (Object.values(options.models) as unknown as Array<Model>);
+
+    transaction = new Transaction(queries, { models });
+
+    delete operations.default.queries;
+
+    operations.default.nativeQueries = transaction.statements.map((statement) => ({
+      query: statement.statement,
+      values: statement.params,
+    }));
+  }
+
+  const requestBody: RequestBody = hasSingleDatabase ? operations.default : operations;
 
   // Runtimes like Cloudflare Workers don't support `cache` yet.
   const hasCachingSupport = 'cache' in new Request('https://ronin.co');
