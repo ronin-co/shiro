@@ -11,5 +11,5 @@
     "src/types/index.ts",
     "src/utils/index.ts"
   ],
-  "external": ["@ronin/engine"]
+  "external": ["@ronin/engine", "bun:sqlite"]
 }
