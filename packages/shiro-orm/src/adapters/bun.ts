@@ -18,7 +18,8 @@ import type {
   SharedAdapterOptions,
 } from '@/src/types/adapter';
 
-interface ShiroOptions<T extends Array<InferredModel>> extends SharedAdapterOptions<T> {
+interface ShiroOptions<T extends Record<string, InferredModel> | Array<InferredModel>>
+  extends SharedAdapterOptions<T> {
   /**
    * @todo Add documentation
    */
@@ -28,7 +29,11 @@ interface ShiroOptions<T extends Array<InferredModel>> extends SharedAdapterOpti
 /**
  * @todo Add documentation
  */
-export const shiro = <const T extends Array<InferredModel>>(options: ShiroOptions<T>) => {
+export const shiro = <
+  const T extends Record<string, InferredModel> | Array<InferredModel>,
+>(
+  options: ShiroOptions<T>,
+) => {
   const database = options.database ?? new Database(':memory:');
 
   if (options.experimental?.initializeModels === true) {
