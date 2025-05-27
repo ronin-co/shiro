@@ -71,9 +71,10 @@ export interface NestedFieldsPrimitivesItem {
 }
 
 export interface Model<
-  TSlug extends string,
-  TPluralSlug extends string,
-  TFields extends RecordWithoutForbiddenKeys<Primitives>,
+  TSlug extends string = string,
+  TPluralSlug extends string = string,
+  TFields extends
+    RecordWithoutForbiddenKeys<Primitives> = RecordWithoutForbiddenKeys<Primitives>,
 > extends Omit<RawModel, 'slug' | 'fields' | 'indexes' | 'presets'> {
   /**
    * The unique singular identifier for this model, used in the database.
