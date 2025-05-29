@@ -68,7 +68,7 @@ export const shiro = <
       });
     },
     models: options.models as unknown as Array<Model>,
-    token: crypto.randomUUID(),
+    token: '1',
   });
 
   return {
