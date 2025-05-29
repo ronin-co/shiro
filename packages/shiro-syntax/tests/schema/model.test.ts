@@ -19,10 +19,16 @@ describe('models', () => {
       pluralSlug: 'accounts',
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+        };
+      }
+    >();
   });
 
   test('create empty model with name', () => {
@@ -40,10 +46,16 @@ describe('models', () => {
       name: 'Account',
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+        };
+      }
+    >();
   });
 
   test('create empty model with plural name', () => {
@@ -63,10 +75,16 @@ describe('models', () => {
       pluralName: 'Accounts',
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+        };
+      }
+    >();
   });
 
   test('create empty model without plural slug', () => {
@@ -84,10 +102,16 @@ describe('models', () => {
       fields: {},
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+        };
+      }
+    >();
   });
 
   test('create empty model with name and plural name', () => {
@@ -109,10 +133,16 @@ describe('models', () => {
       fields: {},
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+        };
+      }
+    >();
   });
 
   test('create empty model with identifier', () => {
@@ -140,10 +170,16 @@ describe('models', () => {
       fields: {},
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+        };
+      }
+    >();
   });
 
   test('create empty model with id prefix', () => {
@@ -163,10 +199,16 @@ describe('models', () => {
       fields: {},
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+        };
+      }
+    >();
   });
 
   test('create simple model', () => {
@@ -193,11 +235,17 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      name: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          name: string;
+        };
+      }
+    >();
   });
 
   test('create simple model with blob field', () => {
@@ -228,12 +276,18 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      name: string;
-      avatar: StoredObject;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          name: string;
+          avatar: StoredObject;
+        };
+      }
+    >();
   });
 
   test('create simple model with json field', () => {
@@ -264,12 +318,18 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      name: string;
-      bio: object;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          name: string;
+          bio: object;
+        };
+      }
+    >();
   });
 
   test('create simple model with date field', () => {
@@ -300,12 +360,18 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      name: string;
-      birthday: Date;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          name: string;
+          birthday: Date;
+        };
+      }
+    >();
   });
 
   test('create simple model with custom field name', () => {
@@ -333,11 +399,17 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      name: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          name: string;
+        };
+      }
+    >();
   });
 
   test('create simple model with field name inferred from slug', () => {
@@ -364,11 +436,17 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      createdAt: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          createdAt: string;
+        };
+      }
+    >();
   });
 
   test('create model with multiple fields', () => {
@@ -412,15 +490,21 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      name: string;
-      email: string;
-      emailVerified: boolean;
-      password: string;
-      follower: number;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          name: string;
+          email: string;
+          emailVerified: boolean;
+          password: string;
+          follower: number;
+        };
+      }
+    >();
   });
 
   test('create model with unique field', () => {
@@ -448,11 +532,17 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      name: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          name: string;
+        };
+      }
+    >();
   });
 
   test('create model with link field', () => {
@@ -494,11 +584,17 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      name: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          name: string;
+        };
+      }
+    >();
 
     expect(Post).toBeTypeOf('object');
 
@@ -519,11 +615,17 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Post).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      author: string;
-    }>();
+    expectTypeOf(Post).toEqualTypeOf<
+      object & {
+        '~Slug': 'post';
+        '~PluralSlug': 'posts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          author: string;
+        };
+      }
+    >();
   });
 
   test('create model with index', () => {
@@ -562,11 +664,17 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      name: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          name: string;
+        };
+      }
+    >();
   });
 
   test('create model with invalid index field', () => {
@@ -654,10 +762,16 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+        };
+      }
+    >();
   });
 
   test('create model with presets including sub queries', () => {
@@ -711,11 +825,17 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Member).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      account: string;
-    }>();
+    expectTypeOf(Member).toEqualTypeOf<
+      object & {
+        '~Slug': 'member';
+        '~PluralSlug': 'members';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          account: string;
+        };
+      }
+    >();
   });
 
   test('create model with nested fields', () => {
@@ -749,13 +869,19 @@ describe('models', () => {
       },
     });
 
-    expectTypeOf(Account).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      address: {
-        country: string;
-        city: string;
-      };
-    }>();
+    expectTypeOf(Account).toEqualTypeOf<
+      object & {
+        '~Slug': 'account';
+        '~PluralSlug': 'accounts';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          address: {
+            country: string;
+            city: string;
+          };
+        };
+      }
+    >();
   });
 });

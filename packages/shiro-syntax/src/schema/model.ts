@@ -70,24 +70,38 @@ export interface NestedFieldsPrimitivesItem {
   [key: string]: PrimitivesItem;
 }
 
-export interface Model<Fields = RecordWithoutForbiddenKeys<Primitives>>
-  extends Omit<RawModel, 'fields' | 'indexes' | 'presets'> {
+export interface Model<
+  TSlug extends string = string,
+  TPluralSlug extends string = `${TSlug}s`,
+  TFields extends
+    RecordWithoutForbiddenKeys<Primitives> = RecordWithoutForbiddenKeys<Primitives>,
+> extends Omit<RawModel, 'slug' | 'fields' | 'indexes' | 'presets'> {
+  /**
+   * The unique singular identifier for this model, used in the database.
+   */
+  slug: TSlug;
+
+  /**
+   * The unique plural identifier for this model, used in the database.
+   */
+  pluralSlug?: TPluralSlug;
+
   /**
    * The fields that make up this model.
    */
-  fields?: Fields;
+  fields?: TFields;
 
   /**
    * Database indexes to optimize query performance.
    */
-  indexes?: Record<string, Omit<ModelIndex<Record<keyof Fields, ModelField>>, 'slug'>>;
+  indexes?: Record<string, Omit<ModelIndex<Record<keyof TFields, ModelField>>, 'slug'>>;
 
   /**
    * Predefined query instructions that can be reused across multiple different queries.
    */
   presets?:
     | Record<string, Omit<ModelPreset, 'slug'>>
-    | ((fields: keyof Fields) => Record<string, Omit<ModelPreset, 'slug'>>);
+    | ((fields: keyof TFields) => Record<string, Omit<ModelPreset, 'slug'>>);
 }
 
 // This type maps the fields of a model to their types.
@@ -130,6 +144,16 @@ export type RecordWithoutForbiddenKeys<V> = {
 // This type expands to show the properties and their types rather than `FieldsToTypes`.
 type Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
 
+export type InferredModel<
+  TSlug extends string = string,
+  TPluralSlug extends string = `${TSlug}s`,
+  TFields = unknown,
+> = object & {
+  '~Slug': TSlug;
+  '~PluralSlug': TPluralSlug;
+  '~Fields': TFields;
+};
+
 /**
  * Generates a model definition and adds default fields to the provided model.
  *
@@ -144,19 +168,26 @@ type Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
  * });
  * ```
  *
- * @template T - A generic type representing the model structure, which contains a slug
- * and fields.
+ * @template TSlug - A string representing the singular slug of the model.
+ * @template TPluralSlug - A string representing the plural slug of the model.
+ * @template TFields - A generic type representing the model structure, which contains a slug and fields.
  * @param model - An object containing the slug and fields of the model.
  *
  * @returns The generated model definition.
  */
 export const model = <
+  TSlug extends string,
+  TPluralSlug extends string = `${TSlug}s`,
   // biome-ignore lint/complexity/noBannedTypes: `Fields` requires an empty object as a fallback.
-  Fields extends RecordWithoutForbiddenKeys<Primitives> = {},
+  TFields extends RecordWithoutForbiddenKeys<Primitives> = {},
 >(
-  model: Model<Fields> | (() => Model<Fields>),
-): Expand<RoninFields & FieldsToTypes<Fields>> => {
-  return getSyntaxProxy({ modelType: true, chaining: false })(model) as unknown as Expand<
-    RoninFields & FieldsToTypes<Fields>
+  model: Model<TSlug, TPluralSlug, TFields> | (() => Model<TSlug, TPluralSlug, TFields>),
+): InferredModel<TSlug, TPluralSlug, Expand<RoninFields & FieldsToTypes<TFields>>> => {
+  return getSyntaxProxy({ modelType: true, chaining: false })(
+    model,
+  ) as unknown as InferredModel<
+    TSlug,
+    TPluralSlug,
+    Expand<RoninFields & FieldsToTypes<TFields>>
   >;
 };
