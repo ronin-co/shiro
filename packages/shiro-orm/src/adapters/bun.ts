@@ -1,7 +1,17 @@
 import { Database } from 'bun:sqlite';
 import { ROOT_MODEL, Transaction } from 'shiro-compiler';
 
-import type { Model, Query } from 'shiro-compiler';
+import type {
+  AlterQuery,
+  CreateQuery,
+  DropQuery,
+  Model,
+  ModelField,
+  ModelIndex,
+  ModelPreset,
+  Query,
+} from 'shiro-compiler';
+import type { DeepCallable } from 'shiro-syntax/queries';
 import type { InferredModel } from 'shiro-syntax/schema';
 
 import createSyntaxFactory from '@/src/index';
@@ -78,9 +88,12 @@ export const shiro = <
     remove: factory.remove as unknown as InferRemoveSyntaxProxy<T>,
     set: factory.set as unknown as InferSetSyntaxProxy<T>,
 
-    alter: factory.alter,
-    create: factory.create,
-    drop: factory.drop,
+    alter: factory.alter as DeepCallable<
+      AlterQuery,
+      Model | ModelField | ModelIndex | ModelPreset
+    >,
+    create: factory.create as DeepCallable<CreateQuery, Model>,
+    drop: factory.drop as DeepCallable<DropQuery, Model>,
     list: factory.list as unknown as InferListSyntaxProxy,
 
     batch: factory.batch,
