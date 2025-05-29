@@ -28,11 +28,17 @@ describe('expressions', () => {
     expect(Test.fields.test.defaultValue).toEqual({
       __RONIN_EXPRESSION: "UPPER('test')",
     });
-    expectTypeOf(Test).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      test: string;
-    }>();
+    expectTypeOf(Test).toEqualTypeOf<
+      object & {
+        '~Slug': 'test';
+        '~PluralSlug': 'tests';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          test: string;
+        };
+      }
+    >();
   });
 
   describe('operator expressions', () => {
@@ -47,11 +53,17 @@ describe('expressions', () => {
       expect(Test.fields.stringConcat.defaultValue).toEqual({
         __RONIN_EXPRESSION: "('Hello' || 'World')",
       });
-      expectTypeOf(Test).toEqualTypeOf<{
-        id: string;
-        ronin: string;
-        stringConcat: string;
-      }>();
+      expectTypeOf(Test).toEqualTypeOf<
+        object & {
+          '~Slug': 'test';
+          '~PluralSlug': 'tests';
+          '~Fields': {
+            id: string;
+            ronin: string;
+            stringConcat: string;
+          };
+        }
+      >();
     });
 
     describe('arithmetic operators', () => {
@@ -66,11 +78,17 @@ describe('expressions', () => {
         expect(Test.fields.add.defaultValue).toEqual({
           __RONIN_EXPRESSION: '(1 + 2)',
         });
-        expectTypeOf(Test).toEqualTypeOf<{
-          id: string;
-          ronin: string;
-          add: number;
-        }>();
+        expectTypeOf(Test).toEqualTypeOf<
+          object & {
+            '~Slug': 'test';
+            '~PluralSlug': 'tests';
+            '~Fields': {
+              id: string;
+              ronin: string;
+              add: number;
+            };
+          }
+        >();
       });
 
       test('subtraction', () => {
@@ -84,11 +102,17 @@ describe('expressions', () => {
         expect(Test.fields.subtract.defaultValue).toEqual({
           __RONIN_EXPRESSION: '(5 - 3)',
         });
-        expectTypeOf(Test).toEqualTypeOf<{
-          id: string;
-          ronin: string;
-          subtract: number;
-        }>();
+        expectTypeOf(Test).toEqualTypeOf<
+          object & {
+            '~Slug': 'test';
+            '~PluralSlug': 'tests';
+            '~Fields': {
+              id: string;
+              ronin: string;
+              subtract: number;
+            };
+          }
+        >();
       });
 
       test('multiplication', () => {
@@ -102,11 +126,17 @@ describe('expressions', () => {
         expect(Test.fields.multiply.defaultValue).toEqual({
           __RONIN_EXPRESSION: '(4 * 2)',
         });
-        expectTypeOf(Test).toEqualTypeOf<{
-          id: string;
-          ronin: string;
-          multiply: number;
-        }>();
+        expectTypeOf(Test).toEqualTypeOf<
+          object & {
+            '~Slug': 'test';
+            '~PluralSlug': 'tests';
+            '~Fields': {
+              id: string;
+              ronin: string;
+              multiply: number;
+            };
+          }
+        >();
       });
 
       test('division', () => {
@@ -120,11 +150,17 @@ describe('expressions', () => {
         expect(Test.fields.divide.defaultValue).toEqual({
           __RONIN_EXPRESSION: '(10 / 2)',
         });
-        expectTypeOf(Test).toEqualTypeOf<{
-          id: string;
-          ronin: string;
-          divide: number;
-        }>();
+        expectTypeOf(Test).toEqualTypeOf<
+          object & {
+            '~Slug': 'test';
+            '~PluralSlug': 'tests';
+            '~Fields': {
+              id: string;
+              ronin: string;
+              divide: number;
+            };
+          }
+        >();
       });
 
       test('modulo', () => {
@@ -138,11 +174,17 @@ describe('expressions', () => {
         expect(Test.fields.modulo.defaultValue).toEqual({
           __RONIN_EXPRESSION: '(7 % 3)',
         });
-        expectTypeOf(Test).toEqualTypeOf<{
-          id: string;
-          ronin: string;
-          modulo: number;
-        }>();
+        expectTypeOf(Test).toEqualTypeOf<
+          object & {
+            '~Slug': 'test';
+            '~PluralSlug': 'tests';
+            '~Fields': {
+              id: string;
+              ronin: string;
+              modulo: number;
+            };
+          }
+        >();
       });
     });
 
@@ -163,12 +205,18 @@ describe('expressions', () => {
         expect(Test.fields.equalsRight.check).toEqual({
           __RONIN_EXPRESSION: "('test' = __RONIN_FIELD_equalsRight)",
         });
-        expectTypeOf(Test).toEqualTypeOf<{
-          id: string;
-          ronin: string;
-          equals: string;
-          equalsRight: string;
-        }>();
+        expectTypeOf(Test).toEqualTypeOf<
+          object & {
+            '~Slug': 'test';
+            '~PluralSlug': 'tests';
+            '~Fields': {
+              id: string;
+              ronin: string;
+              equals: string;
+              equalsRight: string;
+            };
+          }
+        >();
       });
 
       test('not equals', () => {
@@ -189,12 +237,18 @@ describe('expressions', () => {
         expect(Test.fields.notEqualsRight.check).toEqual({
           __RONIN_EXPRESSION: "('test' != (__RONIN_FIELD_notEqualsRight != 'test'))",
         });
-        expectTypeOf(Test).toEqualTypeOf<{
-          id: string;
-          ronin: string;
-          notEquals: string;
-          notEqualsRight: string;
-        }>();
+        expectTypeOf(Test).toEqualTypeOf<
+          object & {
+            '~Slug': 'test';
+            '~PluralSlug': 'tests';
+            '~Fields': {
+              id: string;
+              ronin: string;
+              notEquals: string;
+              notEqualsRight: string;
+            };
+          }
+        >();
       });
 
       test('greater than', () => {
@@ -215,12 +269,18 @@ describe('expressions', () => {
         expect(Test.fields.greaterThanRight.check).toEqual({
           __RONIN_EXPRESSION: '(5 > __RONIN_FIELD_greaterThanRight)',
         });
-        expectTypeOf(Test).toEqualTypeOf<{
-          id: string;
-          ronin: string;
-          greaterThan: number;
-          greaterThanRight: number;
-        }>();
+        expectTypeOf(Test).toEqualTypeOf<
+          object & {
+            '~Slug': 'test';
+            '~PluralSlug': 'tests';
+            '~Fields': {
+              id: string;
+              ronin: string;
+              greaterThan: number;
+              greaterThanRight: number;
+            };
+          }
+        >();
       });
 
       test('less than', () => {
@@ -245,12 +305,18 @@ describe('expressions', () => {
           __RONIN_EXPRESSION:
             '((5 < __RONIN_FIELD_lessThanRight) < (5 < __RONIN_FIELD_lessThanRight))',
         });
-        expectTypeOf(Test).toEqualTypeOf<{
-          id: string;
-          ronin: string;
-          lessThan: number;
-          lessThanRight: number;
-        }>();
+        expectTypeOf(Test).toEqualTypeOf<
+          object & {
+            '~Slug': 'test';
+            '~PluralSlug': 'tests';
+            '~Fields': {
+              id: string;
+              ronin: string;
+              lessThan: number;
+              lessThanRight: number;
+            };
+          }
+        >();
       });
 
       test('greater than or equal', () => {
@@ -273,12 +339,18 @@ describe('expressions', () => {
         expect(Test.fields.greaterThanEqualRight.check).toEqual({
           __RONIN_EXPRESSION: '(5 >= __RONIN_FIELD_greaterThanEqualRight)',
         });
-        expectTypeOf(Test).toEqualTypeOf<{
-          id: string;
-          ronin: string;
-          greaterThanEqual: number;
-          greaterThanEqualRight: number;
-        }>();
+        expectTypeOf(Test).toEqualTypeOf<
+          object & {
+            '~Slug': 'test';
+            '~PluralSlug': 'tests';
+            '~Fields': {
+              id: string;
+              ronin: string;
+              greaterThanEqual: number;
+              greaterThanEqualRight: number;
+            };
+          }
+        >();
       });
 
       test('less than or equal', () => {
@@ -299,12 +371,18 @@ describe('expressions', () => {
         expect(Test.fields.lessThanEqualRight.check).toEqual({
           __RONIN_EXPRESSION: '(5 <= __RONIN_FIELD_lessThanEqualRight)',
         });
-        expectTypeOf(Test).toEqualTypeOf<{
-          id: string;
-          ronin: string;
-          lessThanEqual: number;
-          lessThanEqualRight: number;
-        }>();
+        expectTypeOf(Test).toEqualTypeOf<
+          object & {
+            '~Slug': 'test';
+            '~PluralSlug': 'tests';
+            '~Fields': {
+              id: string;
+              ronin: string;
+              lessThanEqual: number;
+              lessThanEqualRight: number;
+            };
+          }
+        >();
       });
     });
   });
@@ -375,20 +453,26 @@ describe('expressions', () => {
         __RONIN_EXPRESSION: '(__RONIN_FIELD_numberAdd || __RONIN_FIELD_numberSubtract)',
       },
     });
-    expectTypeOf(Test).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      stringConcat: string;
-      numberAdd: number;
-      numberSubtract: number;
-      numberMultiply: number;
-      numberDivide: number;
-      numberModulo: number;
-      stringCompare: string;
-      numberCompare: number;
-      rightSideField: string;
-      computedAs: string;
-    }>();
+    expectTypeOf(Test).toEqualTypeOf<
+      object & {
+        '~Slug': 'test';
+        '~PluralSlug': 'tests';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          stringConcat: string;
+          numberAdd: number;
+          numberSubtract: number;
+          numberMultiply: number;
+          numberDivide: number;
+          numberModulo: number;
+          stringCompare: string;
+          numberCompare: number;
+          rightSideField: string;
+          computedAs: string;
+        };
+      }
+    >();
   });
 
   test('default expression', () => {
@@ -418,14 +502,20 @@ describe('expressions', () => {
     expect(Test.fields.test4.defaultValue).toEqual({
       __RONIN_EXPRESSION: "(('Hello' || 'World') || ('Hello' || 'World'))",
     });
-    expectTypeOf(Test).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      test1: string;
-      test2: string;
-      test3: string;
-      test4: string;
-    }>();
+    expectTypeOf(Test).toEqualTypeOf<
+      object & {
+        '~Slug': 'test';
+        '~PluralSlug': 'tests';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          test1: string;
+          test2: string;
+          test3: string;
+          test4: string;
+        };
+      }
+    >();
   });
 
   test('random expression', () => {
@@ -440,11 +530,17 @@ describe('expressions', () => {
     expect(Test.fields.test.defaultValue).toEqual({
       __RONIN_EXPRESSION: 'random()',
     });
-    expectTypeOf(Test).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      test: number;
-    }>();
+    expectTypeOf(Test).toEqualTypeOf<
+      object & {
+        '~Slug': 'test';
+        '~PluralSlug': 'tests';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          test: number;
+        };
+      }
+    >();
   });
 
   test('abs expression', () => {
@@ -466,12 +562,18 @@ describe('expressions', () => {
     expect(Test.fields.expressionAbs.defaultValue).toEqual({
       __RONIN_EXPRESSION: 'abs((1 - 5))',
     });
-    expectTypeOf(Test).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      numberAbs: number;
-      expressionAbs: number;
-    }>();
+    expectTypeOf(Test).toEqualTypeOf<
+      object & {
+        '~Slug': 'test';
+        '~PluralSlug': 'tests';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          numberAbs: number;
+          expressionAbs: number;
+        };
+      }
+    >();
   });
 
   test('strftime expression', () => {
@@ -491,12 +593,18 @@ describe('expressions', () => {
     expect(Test.fields.customFormat.defaultValue).toEqual({
       __RONIN_EXPRESSION: "strftime('%H:%M:%S', 'now')",
     });
-    expectTypeOf(Test).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      currentDate: Date;
-      customFormat: Date;
-    }>();
+    expectTypeOf(Test).toEqualTypeOf<
+      object & {
+        '~Slug': 'test';
+        '~PluralSlug': 'tests';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          currentDate: Date;
+          customFormat: Date;
+        };
+      }
+    >();
   });
 
   test('json expressions', () => {
@@ -544,15 +652,21 @@ describe('expressions', () => {
     expect(Test.fields.jsonExtract.defaultValue).toEqual({
       __RONIN_EXPRESSION: 'json_extract(\'{"foo": "bar", "baz": "qux"}\', \'$.foo\')',
     });
-    expectTypeOf(Test).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      jsonPatch: string;
-      jsonSet: string;
-      jsonReplace: string;
-      jsonInsert: string;
-      jsonExtract: string;
-    }>();
+    expectTypeOf(Test).toEqualTypeOf<
+      object & {
+        '~Slug': 'test';
+        '~PluralSlug': 'tests';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          jsonPatch: string;
+          jsonSet: string;
+          jsonReplace: string;
+          jsonInsert: string;
+          jsonExtract: string;
+        };
+      }
+    >();
   });
 
   test('nested expressions', () => {
@@ -579,13 +693,19 @@ describe('expressions', () => {
     expect(Test.fields.complexNesting.defaultValue).toEqual({
       __RONIN_EXPRESSION: 'abs((random() * (2 + 3)))',
     });
-    expectTypeOf(Test).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      randomPlusTwo: number;
-      absOfRandom: number;
-      complexNesting: number;
-    }>();
+    expectTypeOf(Test).toEqualTypeOf<
+      object & {
+        '~Slug': 'test';
+        '~PluralSlug': 'tests';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          randomPlusTwo: number;
+          absOfRandom: number;
+          complexNesting: number;
+        };
+      }
+    >();
   });
 
   test('nested expressions', () => {
@@ -602,11 +722,17 @@ describe('expressions', () => {
     expect(Test.fields.test.defaultValue).toEqual({
       __RONIN_EXPRESSION: "(('Hello' || 'World') || ('Hello' || 'World'))",
     });
-    expectTypeOf(Test).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      test: string;
-    }>();
+    expectTypeOf(Test).toEqualTypeOf<
+      object & {
+        '~Slug': 'test';
+        '~PluralSlug': 'tests';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          test: string;
+        };
+      }
+    >();
   });
 
   test('replace expression', () => {
@@ -630,11 +756,17 @@ describe('expressions', () => {
     expect(Test.fields.multiReplace.defaultValue).toEqual({
       __RONIN_EXPRESSION: "replace('hello hello hello', 'hello', 'hi')",
     });
-    expectTypeOf(Test).toEqualTypeOf<{
-      id: string;
-      ronin: string;
-      simpleReplace: string;
-      multiReplace: string;
-    }>();
+    expectTypeOf(Test).toEqualTypeOf<
+      object & {
+        '~Slug': 'test';
+        '~PluralSlug': 'tests';
+        '~Fields': {
+          id: string;
+          ronin: string;
+          simpleReplace: string;
+          multiReplace: string;
+        };
+      }
+    >();
   });
 });
