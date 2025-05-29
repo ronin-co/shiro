@@ -1,13 +1,10 @@
 import { Database } from 'bun:sqlite';
-import { QUERY_SYMBOLS, ROOT_MODEL, Transaction } from 'shiro-compiler';
-import { getSyntaxProxy } from 'shiro-syntax/queries';
-
-import { isStorableObject } from '@/src/storage';
-import { queryHandler } from '@/src/utils/handlers';
+import { ROOT_MODEL, Transaction } from 'shiro-compiler';
 
 import type { Model, Query } from 'shiro-compiler';
 import type { InferredModel } from 'shiro-syntax/schema';
 
+import createSyntaxFactory from '@/src/index';
 import type {
   InferAddSyntaxProxy,
   InferCountSyntaxProxy,
@@ -54,72 +51,40 @@ export const shiro = <
     }
   }
 
-  const callback = (defaultQuery: Query) => {
-    const query = defaultQuery as Record<typeof QUERY_SYMBOLS.QUERY, Query>;
-    return queryHandler(query[QUERY_SYMBOLS.QUERY], {
-      fetch: async (request) => {
-        // TODO(@nurodev): Improve error handling.
-        if (!(request instanceof Request))
-          throw new Error('Fetcher can only handle Request objects');
+  const factory = createSyntaxFactory({
+    fetch: async (request) => {
+      // TODO(@nurodev): Improve error handling.
+      if (!(request instanceof Request))
+        throw new Error('Fetcher can only handle Request objects');
 
-        const { nativeQueries } = (await request.json()) as {
-          nativeQueries: Array<{ query: string; values: Array<string> }>;
-        };
+      const { nativeQueries } = (await request.json()) as {
+        nativeQueries: Array<{ query: string; values: Array<string> }>;
+      };
 
-        return Response.json({
-          results: nativeQueries.map(({ query, values }) =>
-            database.query(query).all(...values),
-          ),
-        });
-      },
-      models: options.models as unknown as Array<Model>,
-      token: crypto.randomUUID(),
-    });
-  };
-
-  // Ensure that storable objects are retained as-is instead of being serialized.
-  const replacer = (value: unknown) => (isStorableObject(value) ? value : undefined);
+      return Response.json({
+        results: nativeQueries.map(({ query, values }) =>
+          database.query(query).all(...values),
+        ),
+      });
+    },
+    models: options.models as unknown as Array<Model>,
+    token: crypto.randomUUID(),
+  });
 
   return {
-    //------------------------------------
-    // DML Queries
-    //------------------------------------
-    add: getSyntaxProxy({
-      root: `${QUERY_SYMBOLS.QUERY}.add`,
-      callback,
-      replacer,
-    }) as InferAddSyntaxProxy<T>,
-    count: getSyntaxProxy({
-      root: `${QUERY_SYMBOLS.QUERY}.count`,
-      callback,
-      replacer,
-    }) as InferCountSyntaxProxy<T>,
-    get: getSyntaxProxy({
-      root: `${QUERY_SYMBOLS.QUERY}.get`,
-      callback,
-      replacer,
-    }) as InferGetSyntaxProxy<T>,
-    remove: getSyntaxProxy({
-      root: `${QUERY_SYMBOLS.QUERY}.remove`,
-      callback,
-      replacer,
-    }) as InferRemoveSyntaxProxy<T>,
-    set: getSyntaxProxy({
-      root: `${QUERY_SYMBOLS.QUERY}.set`,
-      callback,
-      replacer,
-    }) as InferSetSyntaxProxy<T>,
+    add: factory.add as InferAddSyntaxProxy<T>,
+    count: factory.count as InferCountSyntaxProxy<T>,
+    get: factory.get as InferGetSyntaxProxy<T>,
+    remove: factory.remove as InferRemoveSyntaxProxy<T>,
+    set: factory.set as InferSetSyntaxProxy<T>,
 
-    //------------------------------------
-    // DDL Queries
-    //------------------------------------
-    list: getSyntaxProxy({
-      root: `${QUERY_SYMBOLS.QUERY}.list`,
-      callback,
-      replacer,
-    }) as unknown as InferListSyntaxProxy,
+    alter: factory.alter,
+    create: factory.create,
+    drop: factory.drop,
+    list: factory.list as unknown as InferListSyntaxProxy,
 
-    // TODO(@nurodev): Add support for missing DDL queries. `create`, `alter` & `drop`.
-    // TODO(@nurodev): Add support for advanced query syntax like `sql`, `sqlBatch` & `batch`.
+    batch: factory.batch,
+    sql: factory.sql,
+    sqlBatch: factory.sqlBatch,
   };
 };
