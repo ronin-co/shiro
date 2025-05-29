@@ -72,7 +72,7 @@ export interface NestedFieldsPrimitivesItem {
 
 export interface Model<
   TSlug extends string = string,
-  TPluralSlug extends string = string,
+  TPluralSlug extends string = `${TSlug}s`,
   TFields extends
     RecordWithoutForbiddenKeys<Primitives> = RecordWithoutForbiddenKeys<Primitives>,
 > extends Omit<RawModel, 'slug' | 'fields' | 'indexes' | 'presets'> {
@@ -84,7 +84,7 @@ export interface Model<
   /**
    * The unique plural identifier for this model, used in the database.
    */
-  pluralSlug: TPluralSlug;
+  pluralSlug?: TPluralSlug;
 
   /**
    * The fields that make up this model.
@@ -146,7 +146,7 @@ type Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
 
 export type InferredModel<
   TSlug extends string = string,
-  TPluralSlug extends string = string,
+  TPluralSlug extends string = `${TSlug}s`,
   TFields = unknown,
 > = object & {
   '~Slug': TSlug;
@@ -177,7 +177,7 @@ export type InferredModel<
  */
 export const model = <
   TSlug extends string,
-  TPluralSlug extends string,
+  TPluralSlug extends string = `${TSlug}s`,
   // biome-ignore lint/complexity/noBannedTypes: `Fields` requires an empty object as a fallback.
   TFields extends RecordWithoutForbiddenKeys<Primitives> = {},
 >(

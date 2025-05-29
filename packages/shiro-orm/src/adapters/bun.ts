@@ -74,9 +74,9 @@ export const shiro = <
   return {
     add: factory.add as InferAddSyntaxProxy<T>,
     count: factory.count as InferCountSyntaxProxy<T>,
-    get: factory.get as InferGetSyntaxProxy<T>,
-    remove: factory.remove as InferRemoveSyntaxProxy<T>,
-    set: factory.set as InferSetSyntaxProxy<T>,
+    get: factory.get as unknown as InferGetSyntaxProxy<T>,
+    remove: factory.remove as unknown as InferRemoveSyntaxProxy<T>,
+    set: factory.set as unknown as InferSetSyntaxProxy<T>,
 
     alter: factory.alter,
     create: factory.create,
